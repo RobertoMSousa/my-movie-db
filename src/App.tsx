@@ -9,19 +9,24 @@ const logo = require('./logo.svg');
 interface IMovie {
 	_id: number;
 	title: string;
+	desc?: string;
 }
 
 // moviesList
 const moviesList: Array<IMovie> = [
 	{
 		_id: 0,
-		title: "sample 1"
+		title: "sample 1",
+		desc: "desc 1"
 	},{
 		_id: 1,
 		title: "sample 2"
 	},{
 		_id: 2,
 		title: "sample 3"
+	},{
+		_id: 3,
+		title: "sample 4"
 	}];
 
 
