@@ -40,15 +40,15 @@ class App extends React.Component <any, any> {
 
 	constructor(props: any) {
 		super(props);
-		console.log('constructor');//roberto
+		console.log('constructor');// roberto
 	}
 
 	componentWillMount() {
-		console.log('componentWillMount');//roberto
+		console.log('componentWillMount');// roberto
 	}
 
 	componentDidMount() {
-		console.log('componentDid Mount');//roberto
+		console.log('componentDid Mount');// roberto
 	}
 
 	render() {
