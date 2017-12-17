@@ -39,6 +39,9 @@ class Movies extends React.Component <any, any> {
 				<h1>
 					{this.props.movie.title}
 				</h1>
+				<h2>
+					{this.props.movie.desc ? this.props.movie.desc : 'sample'}
+				</h2>
 			</div>
 		);
 	}
