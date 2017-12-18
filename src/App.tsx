@@ -57,9 +57,14 @@ class App extends React.Component <any, any> {
 			 		<img src={logo} className="App-logo" alt="logo" />
 				</div>
 				<div>
-					{moviesList.map((movie)=> {
+					<p>
+					{this.state.moviesList.length}
+					</p>
+					{
+						this.state.moviesList.length > 0 &&
+						this.state.moviesList.map((movie: IMovie)=> {
 						return(
-							<Movie key={movie._id} movie={movie} />
+							<Movie key={movie.id} movie={movie} />
 						)
 					})}
 				</div>
