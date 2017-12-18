@@ -8,13 +8,6 @@ import './movies.css';
 // class
 class Movies extends React.Component <any, any> {
 
-	// static propTypes = {
-	// 	movie: PropTypes.shape({
-	// 		_id: PropTypes.number,
-	// 		title: PropTypes.string.isRequired,
-	// 		desc: PropTypes.string
-	// 	})
-	// }
 
 	state = {
 		sampleState: ''
@@ -40,7 +33,7 @@ class Movies extends React.Component <any, any> {
 					{this.props.movie.title}
 				</h1>
 				<h2>
-					{this.props.movie.desc ? this.props.movie.desc : 'sample'}
+					{this.props.movie.overview ? this.props.movie.overview : 'sample'}
 				</h2>
 			</div>
 		);
