@@ -1,54 +1,53 @@
 
 import * as React from 'react';
+
 import './App.css';
+
+
 
 import Movie from './components/movies/movies';
 const logo = require('./logo.svg');
 
-// IMovie interface
 interface IMovie {
-	_id: number;
+	id: number;
 	title: string;
-	desc?: string;
+	overview?: string;
 }
-
-// moviesList
-const moviesList: Array<IMovie> = [
-	{
-		_id: 0,
-		title: "sample 1",
-		desc: "desc 1"
-	},{
-		_id: 1,
-		title: "sample 2"
-	},{
-		_id: 2,
-		title: "sample 3"
-	},{
-		_id: 3,
-		title: "sample 4"
-	}];
 
 
 class App extends React.Component <any, any> {
 
 
 	state = {
-		sampleState: ''
-	};
-
-
-	constructor(props: any) {
-		super(props);
-		console.log('constructor');// roberto
+		moviesList: []
 	}
 
-	componentWillMount() {
-		console.log('componentWillMount');// roberto
-	}
+	// constructor(props: any) {
+	// 	super(props);
+	// 	console.log('constructor');// roberto
+	// }
+    //
+	// componentWillMount() {
+	// 	console.log('componentWillMount');// roberto
+	// }
 
-	componentDidMount() {
-		console.log('componentDid Mount');// roberto
+	async componentDidMount() {
+		try {
+			console.log('componentDid Mount-->', process.env);// roberto
+			const res = await fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=' + process.env.REACT_APP_API_KEY + '&language=en-US&page=1');
+			const moviesListSample: any  =  await res.json();
+			console.log('moviesListSample-->', moviesListSample);// roberto
+			console.log('moviesListSample result-->', moviesListSample.results);// roberto
+			if (moviesListSample && moviesListSample.results)
+			{
+				this.setState({
+					moviesList: moviesListSample.results
+				});
+			}
+		} catch (e) {
+			console.log('error-->', e);
+			throw new Error('  ');
+		}
 	}
 
 	render() {
