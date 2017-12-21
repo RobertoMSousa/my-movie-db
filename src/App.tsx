@@ -15,6 +15,10 @@ interface IMovie {
 }
 
 
+export const getData = () => ({
+	// 'https://api.themoviedb.org/3/movie/top_rated?api_key=' + process.env.REACT_APP_API_KEY + '&language=en-US&page=1'
+});
+
 class App extends React.Component <any, any> {
 
 
@@ -22,30 +26,32 @@ class App extends React.Component <any, any> {
 		moviesList: []
 	}
 
-	// constructor(props: any) {
-	// 	super(props);
-	// 	console.log('constructor');// roberto
-	// }
+	constructor(props: any) {
+		super(props);
+		console.log('constructor');// roberto
+	}
     //
 	// componentWillMount() {
 	// 	console.log('componentWillMount');// roberto
 	// }
 
-	async componentDidMount() {
+
+	componentDidMount() {
 		try {
 			console.log('componentDid Mount-->', process.env);// roberto
-			const res = await fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=' + process.env.REACT_APP_API_KEY + '&language=en-US&page=1');
-			const moviesListSample: any  =  await res.json();
-			console.log('moviesListSample-->', moviesListSample);// roberto
-			console.log('moviesListSample result-->', moviesListSample.results);// roberto
-			if (moviesListSample && moviesListSample.results)
-			{
-				this.setState({
-					moviesList: moviesListSample.results
-				});
-			}
+			getData();
+			// const res = await fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=' + process.env.REACT_APP_API_KEY + '&language=en-US&page=1');
+			// const moviesListSample: any  =  await res.json();
+			// console.log('moviesListSample-->', moviesListSample);// roberto
+			// console.log('moviesListSample result-->', moviesListSample.results);// roberto
+			// if (moviesListSample && moviesListSample.results)
+			// {
+			// 	this.setState({
+			// 		moviesList: moviesListSample.results
+			// 	});
+			// }
 		} catch (e) {
-			console.log('error-->', e);
+			console.error('error-->', e);
 			throw new Error('  ');
 		}
 	}
