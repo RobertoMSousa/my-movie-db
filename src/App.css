@@ -1,18 +1,36 @@
 
+
+/*Fonts*/
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,900');
+
+
+/* Color palette */
+
+:root {
+	--blue-green: #13a19c;
+	--cloudy-blue: #d4d4df;
+	--dark: #242e41;
+	--dark-two: #31384b;
+	--font: 'Lato', sans-serif;
+}
+
 .App {
-  text-align: center;
+	text-align: center;
+	background-color: var(--dark);
 }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
+  cursor: pointer;
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+	width: 100%;
+	height: 200px;
+	background-image: url('./img/header.png');
+	background-position: center;
+	background-size: cover;
 }
 
 .App-intro {
