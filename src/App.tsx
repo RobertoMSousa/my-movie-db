@@ -1,17 +1,15 @@
 
 import * as React from 'react';
+import {Link} from 'react-router';
 
-//
-// const middleware = applyMiddleware()
 
+import TopMenu from './components/top-menu/top-menu';
+
+// images
+const logo = require('./img/logo.svg');
+
+// css
 import './App.css';
-import store from "./store"
-
-
-import Movie from './components/movies/movies';
-
-const logo = require('./logo.svg');
-
 
 class App extends React.Component <any, any> {
 
@@ -23,13 +21,15 @@ class App extends React.Component <any, any> {
 		return (
 			<div className="App">
 				<div className="App-header">
-			 		<img src={logo} className="App-logo" alt="logo" />
+					<Link to='/'>
+						<img src={logo} className="App-logo" alt="logo" />
+					</Link>
 				</div>
-				<Movie store={store}/>
+				<TopMenu/>
+				{this.props.children}
 			</div>
 		);
 	}
 }
-
 
 export default App;
