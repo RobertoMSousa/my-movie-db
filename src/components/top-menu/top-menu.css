@@ -1,0 +1,72 @@
+.topBarContainer {
+	width: auto;
+	height: 50px;
+	background-color: var(--dark);
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.topBarListName {
+	width: 235.1px;
+	line-height: 39px;
+	font-family: var(--font);
+	font-size: 25px;
+	font-weight: bold;
+	text-align: center;
+	color: var(--cloudy-blue);
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.topBarListName#span {
+	cursor: pointer;
+}
+
+.topBarListName.selected, .topBarListName:hover{
+	color: var(--blue-green);
+}
+
+
+.selected-line-indicatorbackground-color{
+	width: 176px;
+	height: 11px;
+	margin: auto;
+}
+
+.selected-line-indicator.selected{
+	width: 176px;
+	height: 11px;
+	margin: auto;
+	background-color: var(--blue-green);
+}
+
+.remove_link_style {
+	text-decoration: inherit;
+	color: inherit;
+}
+
+
+
+@media all and (max-width: 1199px) {
+	.topBarListName {
+		font-size: 20px;
+	}
+}
+@media all and (max-width: 991px) {
+	.topBarListName {
+		font-size: 18px;
+	}
+}
+@media all and (max-width: 768px) {
+	.topBarListName {
+		display: none;
+	}
+}
+@media all and (max-width: 575px) {
+	.topBarListName {
+		display: none;
+	}
+}
