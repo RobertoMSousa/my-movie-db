@@ -12,3 +12,18 @@ export function getTopRatedMovies() {
 			})
 	}
 }
+
+
+
+export function getMovieData(movieId: number) {
+	return function(dispatch) {
+		dispatch({ type: "GET_MOVIE_DATA" });
+		axios.get('https://api.themoviedb.org/3/movie/' + movieId + '?api_key=' + process.env.REACT_APP_API_KEY)
+			.then((response) => {
+				dispatch({ type: "GET_MOVIE_DATA_SUCCESS", payload: response.data })
+			})
+			.catch((err) => {
+				dispatch({ type: "GET_MOVIE_DATA_FAILED", payload: err })
+			})
+	}
+}
