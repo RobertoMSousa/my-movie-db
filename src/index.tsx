@@ -11,6 +11,7 @@ import Movies from './components/movies/moviesList';
 import Shows from './components/shows/shows';
 import Music from './components/music/music';
 import Others from './components/others/others';
+import NotFound from './components/notFound/notFound';
 
 // css code
 import './index.css';
@@ -22,7 +23,7 @@ import store from "./store"
 const app = document.getElementById('root');
 
 ReactDOM.render(
-	<div>
+	<div className="indexMainContainer">
 		<Provider store={store}>
 			<Router history={hashHistory}>
 				<Route path="/" component={App}>
@@ -30,7 +31,8 @@ ReactDOM.render(
 					<Route path="movies" name="movies" component={Movies}></Route>
 					<Route path="shows" name="shows" component={Shows}></Route>
 					<Route path="music" name="music" component={Music}></Route>
-					<Route path="others" name="Others" component={Others}></Route>
+					<Route path="others" name="others" component={Others}></Route>
+					<Route path="*" name='notFound' component={NotFound}></Route>
 				</Route>
 			</Router>
 		</Provider>

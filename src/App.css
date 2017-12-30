@@ -17,6 +17,7 @@
 .App {
 	text-align: center;
 	background-color: var(--dark);
+	height: 100%;
 }
 
 .App-logo {

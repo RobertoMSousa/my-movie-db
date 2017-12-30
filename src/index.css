@@ -2,4 +2,13 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--font);
+  height: 100vh;
+}
+
+#root {
+    height: inherit;
+}
+
+.indexMainContainer {
+    height: inherit;
 }
