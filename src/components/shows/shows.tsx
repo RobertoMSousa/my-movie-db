@@ -3,6 +3,9 @@ import * as React from 'react';
 import { connect } from "react-redux";
 
 
+import TopMenu from '../top-menu/top-menu';
+
+
 // assets
 import './shows.css';
 
@@ -22,7 +25,10 @@ class Shows extends React.Component <any, any> {
 
 	render() {
 		return (
-			<h1>Shows</h1>
+			<div>
+				<TopMenu path={this.props.route.path}/>
+				<h1>Shows</h1>
+			</div>
 		);
 	}
 }

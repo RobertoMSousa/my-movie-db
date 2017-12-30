@@ -5,6 +5,8 @@ import { connect } from "react-redux";
 import {Link} from 'react-router';
 
 
+import BurgerMenu from '../burgerMenu/burgerMenu';
+
 // assets
 import './top-menu.css';
 
@@ -20,7 +22,7 @@ class TopMenu extends React.Component <any, any> {
 		super(props);
 		this.changeSelectedValue = this.changeSelectedValue.bind(this);
 		this.state = {
-		  selectValue: 'movies'
+		  selectValue: this.props.path ? this.props.path : 'movies'
 		};
 	}
 
@@ -32,8 +34,10 @@ class TopMenu extends React.Component <any, any> {
 
 	render() {
 		const arr = ['movies', 'shows', 'music', 'others'];
+		console.log('props-->', this.props.path);// roberto
 		return (
 			<div className='topBarContainer'>
+				<BurgerMenu/>
 				{
 				arr.map((value: string)=> {
 					return(

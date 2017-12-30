@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import './movies.css';
 
 import { getTopRatedMovies } from "../../actions/movies/movies";
+import TopMenu from '../top-menu/top-menu';
 
 
 import * as Movie from '../../interfaces/movie';
@@ -36,8 +37,10 @@ class MoviesList extends React.Component <any, any> {
 
 	render() {
 		const { moviesList } = this.props;
+		console.log('path-->', this.props.route.path);// roberto
 		return (
 			<div>
+				<TopMenu path={this.props.route.path}/>
 				{
 					moviesList &&
 					moviesList.map((movie: Movie.IMovie)=> {
