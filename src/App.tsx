@@ -3,8 +3,6 @@ import * as React from 'react';
 import {Link} from 'react-router';
 
 
-import TopMenu from './components/top-menu/top-menu';
-
 // images
 const logo = require('./img/logo.svg');
 
@@ -25,7 +23,6 @@ class App extends React.Component <any, any> {
 						<img src={logo} className="App-logo" alt="logo" />
 					</Link>
 				</div>
-				<TopMenu/>
 				{this.props.children}
 			</div>
 		);
