@@ -54,7 +54,7 @@ export default class CloseButton extends React.Component <any, any> {
 
 	render() {
 
-		const arr = ['movies', 'shows', 'tv', 'music', 'others'];
+		const arr = ['movies', 'shows', 'music', 'others'];
 
 		return (
 			<div ref={this.setWrapperRef} className={this.state.open ? 'open oppenned': 'open'} onClick={this.toggleClass} >

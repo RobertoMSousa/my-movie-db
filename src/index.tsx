@@ -9,7 +9,6 @@ import registerServiceWorker from './registerServiceWorker';
 
 import Movies from './components/movies/moviesList';
 import Shows from './components/shows/shows';
-import Tv from './components/tv/tv';
 import Music from './components/music/music';
 import Others from './components/others/others';
 
@@ -30,7 +29,6 @@ ReactDOM.render(
 					<IndexRoute component={Movies}></IndexRoute>
 					<Route path="movies" name="movies" component={Movies}></Route>
 					<Route path="shows" name="shows" component={Shows}></Route>
-					<Route path="tv" name="tv" component={Tv}></Route>
 					<Route path="music" name="music" component={Music}></Route>
 					<Route path="others" name="Others" component={Others}></Route>
 				</Route>

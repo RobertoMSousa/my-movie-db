@@ -31,7 +31,7 @@ class TopMenu extends React.Component <any, any> {
 	}
 
 	render() {
-		const arr = ['movies', 'shows', 'tv', 'music', 'others'];
+		const arr = ['movies', 'shows', 'music', 'others'];
 		return (
 			<div className='topBarContainer'>
 				{
