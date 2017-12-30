@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 
 // assets
-import './myCSS.css';
+import './burgerMenu.css';
 
 @connect((store) => {
 	return {
@@ -12,7 +12,7 @@ import './myCSS.css';
 })
 
 // class
-export default class CloseButton extends React.Component <any, any> {
+export default class BurgerMenu extends React.Component <any, any> {
 
 	constructor(props) {
 		super(props);
@@ -57,7 +57,7 @@ export default class CloseButton extends React.Component <any, any> {
 		const arr = ['movies', 'shows', 'music', 'others'];
 
 		return (
-			<div ref={this.setWrapperRef} className={this.state.open ? 'open oppenned': 'open'} onClick={this.toggleClass} >
+			<div ref={this.setWrapperRef} className={this.state.open ? 'burger oppenned-burger': 'burger'} onClick={this.toggleClass} >
 				<span className="cls"></span>
 				<span>
 					<ul className="sub-menu">
@@ -77,11 +77,3 @@ export default class CloseButton extends React.Component <any, any> {
 		);
 	}
 }
-
-
-
-// <div id="closeButton" ref={this.setWrapperRef} className={this.state.open ? 'open': ''} onClick={this.toggleClass} >
-// 	<span></span>
-// 	<span></span>
-// 	<span></span>
-// </div>

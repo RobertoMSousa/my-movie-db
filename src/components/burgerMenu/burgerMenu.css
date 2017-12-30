@@ -1,5 +1,5 @@
 
-.open{
+.burger{
 	position: fixed;
 	top: 40px;
 	right: 40px;
@@ -10,11 +10,11 @@
 	transition: opacity 0.2s linear;
 }
 
-.open:hover {
+.burger:hover {
 	opacity: 0.8;
 }
 
-.open span{
+.burger span{
 	display: block;
 	float: left;
 	clear: both;
@@ -29,14 +29,14 @@
 	transition: all 0.4s ease;
 }
 
-.open span:nth-child(1) {
+.burger span:nth-child(1) {
 	margin-top: 10px;
 	z-index: 9;
 }
-.open span:nth-child(2) {
+.burger span:nth-child(2) {
 	margin-top: 25px;
 }
-.open span:nth-child(3) {
+.burger span:nth-child(3) {
 	margin-top: 40px;
 }
 
@@ -103,7 +103,7 @@
 }
 
 
-.oppenned span:nth-child(2){
+.oppenned-burger span:nth-child(2){
 	height: 400px;
 	width: 400px;
 	right: -160px;
@@ -112,33 +112,40 @@
 	background-color: rgba(38, 84, 133, 0.54);
 }
 
-.oppenned span:nth-child(3){
+.oppenned-burger span:nth-child(3){
 	transform: rotate(-45deg) translateY(-10px) translateX(10px);
 }
 
-.oppenned li{
+.oppenned-burger li{
 	margin-right: 100px;
 }
 
 
-.oppenned .sub-menu{
+.oppenned-burger .sub-menu{
 	opacity: 1;
 	height: 400px;
 	width: 400px;
 }
-.oppenned span:nth-child(2){
+.oppenned-burger span:nth-child(2){
 	overflow: visible;
 }
 
-.oppenned span:nth-child(3){
+.oppenned-burger span:nth-child(3){
 	z-index: 100;
 }
 
-.oppenned span:nth-child(1){
+.oppenned-burger span:nth-child(1){
 	z-index: 100;
 	transform: rotate(45deg);
 }
 
-.oppenned span:nth-child(1){
+.oppenned-burger span:nth-child(1){
 	transform: rotate(45deg) translateY(12px) translateX(12px);
+}
+
+
+@media all and (min-width: 769px) {
+	.burger {
+		display: none;
+	}
 }
