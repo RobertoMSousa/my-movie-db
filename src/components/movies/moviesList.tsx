@@ -37,20 +37,35 @@ class MoviesList extends React.Component <any, any> {
 
 	render() {
 		const { moviesList } = this.props;
+
 		console.log('path-->', this.props.route.path);// roberto
+		console.log('moviesList-->', moviesList);// roberto
+
 		return (
 			<div>
 				<TopMenu path={this.props.route.path}/>
-				{
-					moviesList &&
-					moviesList.map((movie: Movie.IMovie)=> {
-						return(
-							<div key={movie.id}>
-								<img src={posterPath + movie.poster_path} alt=''/>
-							</div>
-						)
-					})
-				}
+				<div className='movieListMainContainer'>
+					{
+						moviesList &&
+						moviesList.map((movie: Movie.IMovie)=> {
+							return(
+								<div key={movie.id} className='movieListContainer'>
+									<div className='movieListMainImage'>
+										<img src={posterPath + movie.poster_path} alt=''/>
+									</div>
+									<div className='moviesListBottomContainer'>
+										<div className='movieListMovieTitle'>
+											<span>{movie.title}</span>
+										</div>
+										<div className='movieListMovieReleaseDate'>
+											<span>{movie.release_date}</span>
+										</div>
+									</div>
+								</div>
+							)
+						})
+					}
+				</div>
 			</div>
 		);
 	}
