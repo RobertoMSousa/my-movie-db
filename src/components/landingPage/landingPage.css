@@ -1,0 +1,11 @@
+.landigPage_top_movie_teaser {
+	width: 100%;
+	height: 530px;
+	border: solid 1px #979797;
+	background-color: red;
+	top: -5px;
+	z-index: -1;
+	position: relative;
+	background-size: cover;
+	background-position-x: center;
+}
