@@ -42,7 +42,14 @@ class LandingPage extends React.Component <any, any> {
 				<TopMenu path={this.props.route.path}/>
 				{
 					movies &&
-					<div className='landigPage_top_movie_teaser' style={{backgroundImage : `url(${imagePath + movies[Math.floor(Math.random() * Math.floor(20))].backdrop_path})`}}></div>
+					<div className='landigPage_top_movie_teaser' style={{backgroundImage : `url(${imagePath + movies[Math.floor(Math.random() * Math.floor(20))].backdrop_path})`}}>
+						<div className='landigPage_top_title_wrapper'>
+							<span className='landigPage_top_title'>Lorem ipsum dolor sit amet</span>
+						</div>
+						<div className='landigPage_register-button'>
+						 	<span className='landigPage_register-button_text'>Join us!</span>
+						</div>
+					</div>
 				}
 			</div>
 		);
