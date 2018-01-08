@@ -7,10 +7,13 @@
 /* Color palette */
 
 :root {
-	--blue-green: #00d8ff;
+	--blue-green: #13a19c;
 	--cloudy-blue: #d4d4df;
 	--dark: #242e41;
 	--dark-two: #31384b;
+	--lipstick: #e1151c;
+	--cherry-red-80: rgba(225, 11, 20, 0.8);
+	--neon-blue: #00d3ff;
 	--font: 'Lato', sans-serif;
 }
 
