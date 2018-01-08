@@ -64,7 +64,7 @@ export default class BurgerMenu extends React.Component <any, any> {
 						{
 						arr.map((value: string)=> {
 							return(
-								<li>
+								<li key={value}>
 									<a>{value.toUpperCase()}</a>
 								</li>
 							);
