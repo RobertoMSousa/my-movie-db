@@ -22,7 +22,7 @@ class TopMenu extends React.Component <any, any> {
 		super(props);
 		this.changeSelectedValue = this.changeSelectedValue.bind(this);
 		this.state = {
-		  selectValue: this.props.path ? this.props.path : 'movies'
+		  selectValue: this.props.path ? this.props.path : ''
 		};
 	}
 
@@ -34,7 +34,7 @@ class TopMenu extends React.Component <any, any> {
 
 	render() {
 		const arr = ['movies', 'shows', 'music', 'others'];
-		console.log('props-->', this.props.path);// roberto
+		// console.log('props-->', this.props.path);// roberto
 		return (
 			<div className='topBarContainer'>
 				<BurgerMenu/>
