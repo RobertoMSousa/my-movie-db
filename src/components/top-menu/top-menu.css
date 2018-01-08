@@ -1,7 +1,6 @@
 .topBarContainer {
 	width: auto;
 	height: 50px;
-	background-color: var(--dark);
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
@@ -10,7 +9,7 @@
 }
 
 .topBarListName {
-	width: 235.1px;
+	width: 265px;
 	line-height: 39px;
 	font-family: var(--font);
 	font-size: 25px;
