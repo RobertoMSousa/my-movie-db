@@ -2,10 +2,57 @@
 	width: 100%;
 	height: 530px;
 	border: solid 1px #979797;
-	background-color: red;
 	top: -5px;
-	z-index: -1;
-	position: relative;
+	z-index: 0;
+	position: initial;
 	background-size: cover;
 	background-position-x: center;
+	display: grid;
+	align-items: center;
+}
+
+
+.landigPage_top_title {
+	width: 250px;
+	height: 75px;
+	font-family: var(--font);
+	font-size: 35px;
+	font-weight: bold;
+	text-align: center;
+	color: var(--cloudy-blue);
+}
+
+
+.landigPage_top_title_wrapper {
+	width: 275px;
+	height: 90px;
+	line-height: 40px;
+	vertical-align: middle;
+	background-image: linear-gradient(rgba(36, 46, 65, 0.7), rgba(36, 46, 65, 0.7));
+	background-blend-mode: darken;
+	opacity: 1;
+	margin: 0 auto;
+}
+
+
+.landigPage_register-button {
+	width: 117.8px;
+	height: 53px;
+	-webkit-filter: blur(0);
+	filter: blur(0);
+	background-color: var(--lipstick);
+	margin: 0 auto;
+	border-radius: 10px;
+    cursor: pointer;
+}
+
+.landigPage_register-button_text {
+	width: 153.8px;
+	height: 30px;
+	line-height: 53px;
+	font-family: var(--font);
+	font-size: 22px;
+	font-weight: bold;
+	text-align: center;
+	color: var(--cloudy-blue);
 }
