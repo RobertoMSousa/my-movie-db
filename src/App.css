@@ -21,6 +21,8 @@
 	text-align: center;
 	background-color: rgba(36,46,65,0.75);
 	height: 100%;
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
 .App-logo {
