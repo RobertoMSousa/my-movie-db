@@ -1,7 +1,6 @@
 .landigPage_top_movie_teaser {
 	width: 100%;
 	height: 530px;
-	border: solid 1px #979797;
 	top: -5px;
 	z-index: 0;
 	position: initial;
@@ -55,4 +54,100 @@
 	font-weight: bold;
 	text-align: center;
 	color: var(--cloudy-blue);
+}
+
+.landigPage_call_to_action {
+	width: 100%;
+	height: 595px;
+	background-color: #d8d8d8;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.landigPage_call_to_action_right {
+	height: inherit;
+	justify-content: center;
+	align-items: center;
+	align-content: space-between;
+	flex-wrap: wrap;
+	display: grid;
+	grid-template-rows: 6fr 1fr;
+}
+
+
+.landigPage_call_to_action_right_movie_poster {
+	height: 400px;
+	background-position-x: center;
+	background-position-y: top;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+
+.landigPage_call_to_action_right_movie_poster_span {
+	font-family: var(--font);
+	font-size: 28px;
+	font-weight: bold;
+	text-align: center;
+	color: #242e41;
+	color: var(--dark);
+	align-self: flex-start;
+}
+
+
+.landigPage_call_to_action_left {
+	display: grid;
+	grid-template-rows: 1fr 2fr 1fr;
+	height: inherit;
+	justify-content: center;
+	align-items: center;
+	align-content: space-between;
+	flex-wrap: wrap;
+}
+
+.landigPage_call_to_action_left_title {
+	font-size: 28px;
+	font-weight: bold;
+	text-align: center;
+	color: var(--dark);
+	padding: 30px;
+}
+.landigPage_call_to_action_left_text {
+	height: 100%;
+	font-size: 22px;
+	font-weight: bold;
+	text-align: center;
+	color: var(--dark);
+	padding: 30px;
+}
+
+
+.landingPage_download_apps_container {
+	height: 350px;
+	width: 100%;
+	display: grid;
+	grid-template-areas: "head head"
+						 "android  ios";
+	grid-template-rows: 75px 1fr;
+	grid-template-columns: 1fr 1fr;
+	font-size: 48px;
+	font-weight: bold;
+	text-align: center;
+	color: var(--cloudy-blue);
+}
+
+.landingPage_download_apps_header {
+	grid-area: head;
+	align-self: center;
+	background-size: cover;
+	background-position-x: center;
+	background-position-y: center;
+}
+.landingPage_download_apps_android {
+	grid-area: android;
+	/* background-color: red; */
+}
+.landingPage_download_apps_ios {
+	grid-area: ios;
+	/* background-color: green; */
 }
