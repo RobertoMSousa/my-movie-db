@@ -12,6 +12,8 @@ import Movies from './components/movies/moviesList';
 import Shows from './components/shows/shows';
 import Music from './components/music/music';
 import Others from './components/others/others';
+import SignIn from './components/auth/signin';
+import SignUp from './components/auth/signup';
 import NotFound from './components/notFound/notFound';
 
 // css code
@@ -33,6 +35,8 @@ ReactDOM.render(
 					<Route path="shows" name="shows" component={Shows}></Route>
 					<Route path="music" name="music" component={Music}></Route>
 					<Route path="others" name="others" component={Others}></Route>
+					<Route path="signin" name="signin" component={SignIn}></Route>
+					<Route path="signup" name="signup" component={SignUp}></Route>
 					<Route path="*" name='notFound' component={NotFound}></Route>
 				</Route>
 			</Router>
