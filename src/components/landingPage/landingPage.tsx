@@ -21,8 +21,6 @@ const googlePlayLogo = require('../../img/google-play.svg');
 const facebookLogo = require('../../img/facebook.svg');
 const twitterLogo = require('../../img/twitter.svg');
 const googleLogo = require('../../img/google.svg');
-// const loginLogo = require('../../img/login.svg');
-
 
 @connect((store) => {
 	return {
