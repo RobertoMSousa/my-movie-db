@@ -89,8 +89,25 @@ class LandingPage extends React.Component <any, any> {
 						<span>Download our apps</span>
 					</div>
 					<div className='landingPage_download_apps_android'>
+						<img src={googlePlayLogo}  className="landingPage_download_apps_logo" alt="" />
 					</div>
 					<div className ='landingPage_download_apps_ios'>
+						<img src={appStoreLogo} className="landingPage_download_apps_logo" alt="" />
+					</div>
+				</div>
+				<div className='landingPage_subscribe_containter'>
+					<div className='landingPage_subscribe_title'>
+						<span>Subscribe to stay updated</span>
+					</div>
+					<div className='landingPage_subscribe_email_container'>
+						<div className='landingPage_subscribe_email'>
+							<TextArea placeholder='email address' callbackFromParent={this.handleEmail}/>
+						</div>
+						<div onClick={this.handleSubmit} className='landingPage_subscribe_submit'>
+							<span>Submit</span>
+						</div>
+					</div>
+				</div>
 					</div>
 				</div>
 			</div>
