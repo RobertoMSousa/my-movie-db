@@ -10,9 +10,10 @@ const imagePath: string = 'https://image.tmdb.org/t/p/w1920';
 const posterPath: string = 'https://image.tmdb.org/t/p/w342';
 
 import TopMenu from '../top-menu/top-menu';
+import TextArea from '../textArea/textArea';
 import './landingPage.css';
 import { getMostPopularMovies } from "../../actions/movies/movies";
-const appBackGround = require('../../img/MobileApps.png');
+
 // assets
 const appBackGround = require('../../img/MobileApps.png');
 const appStoreLogo = require('../../img/app-store.svg');
@@ -35,7 +36,10 @@ class LandingPage extends React.Component <any, any> {
 	constructor(props) {
 		super(props);
 		this.state = {
+			email: ''
 		};
+		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleEmail = this.handleEmail.bind(this);
 	}
 
 	componentDidMount() {
@@ -44,6 +48,27 @@ class LandingPage extends React.Component <any, any> {
 		} catch (e) {
 			console.error('error-->', e);
 		}
+	}
+
+	handleSubmit() {
+		try {
+			if (isEmail(this.state.email)){
+			swal("Good job!", "Thanks for Subscribing!", "success");
+			/*
+			TODO: send the email to the backend
+			*/
+		}
+			else {
+				swal("Uppps!", "The email is not valid!", "error");
+			}
+		} catch (e) {
+			console.log('error-->', e);
+			throw new Error('  ');
+		}
+	}
+
+	handleEmail(email) {
+		this.setState({ email: email });
 	}
 
 	render() {
@@ -108,6 +133,24 @@ class LandingPage extends React.Component <any, any> {
 						</div>
 					</div>
 				</div>
+				<div className='landingPage_footer_containter'>
+					<div className='landingPage_footer_links'>
+						<span>About</span>
+						<span>API</span>
+						<span>Terms</span>
+						<span>Contact</span>
+					</div>
+					<div className='landingPage_footer_social'>
+						<div className='landingPage_footer_social_title'>Follow Us</div>
+						<div className='landingPage_footer_social_twitter'>
+							<img src={twitterLogo} className="" alt="" />
+						</div>
+						<div className='landingPage_footer_social_facebook'>
+							<img src={facebookLogo} className="" alt="" />
+						</div>
+						<div className='landingPage_footer_social_google'>
+							<img src={googleLogo} className="" alt="" />
+						</div>
 					</div>
 				</div>
 			</div>
@@ -115,9 +158,5 @@ class LandingPage extends React.Component <any, any> {
 	}
 }
 
-//
-// {
-// 	movies && <img className='landigPage_top_movie_teaser' src={imagePath + movies[Math.floor(Math.random() * Math.floor(20))].backdrop_path} alt=''/>
-// }
 
 export default LandingPage;
