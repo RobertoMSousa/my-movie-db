@@ -35,7 +35,6 @@ export default class BurgerMenu extends React.Component <any, any> {
 
 
 	toggleClass() {
-		console.log('open state-->', this.state.open);// roberto
 		this.setState({ open: !this.state.open });
 	};
 

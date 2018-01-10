@@ -38,9 +38,6 @@ class MoviesList extends React.Component <any, any> {
 	render() {
 		const { moviesList } = this.props;
 
-		console.log('path-->', this.props.route.path);// roberto
-		console.log('moviesList-->', moviesList);// roberto
-
 		return (
 			<div>
 				<TopMenu path={this.props.route.path}/>

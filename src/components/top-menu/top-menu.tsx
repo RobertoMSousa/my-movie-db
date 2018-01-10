@@ -34,7 +34,6 @@ class TopMenu extends React.Component <any, any> {
 
 	render() {
 		const arr = ['movies', 'shows', 'music', 'others'];
-		// console.log('props-->', this.props.path);// roberto
 		return (
 			<div className='topBarContainer'>
 				<BurgerMenu/>
