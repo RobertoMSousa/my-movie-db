@@ -8,8 +8,6 @@ export default function reducer(state = {
 	fetched: false,
 	error: null,
 }, action) {
-	console.log('action-->', action);// roberto
-
 	switch (action.type) {
 		case "GET_TOP_RATED_MOVIES": {
 			return { ...state, fetching: true }

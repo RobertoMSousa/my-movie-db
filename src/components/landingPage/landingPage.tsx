@@ -1,7 +1,8 @@
 
 import * as React from 'react';
 import { connect } from "react-redux";
-
+import isEmail from 'validator/lib/isEmail';
+import swal from 'sweetalert';
 
 
 import * as Movie from '../../interfaces/movie';
@@ -13,6 +14,14 @@ import './landingPage.css';
 import { getMostPopularMovies } from "../../actions/movies/movies";
 const appBackGround = require('../../img/MobileApps.png');
 // assets
+const appBackGround = require('../../img/MobileApps.png');
+const appStoreLogo = require('../../img/app-store.svg');
+const googlePlayLogo = require('../../img/google-play.svg');
+const facebookLogo = require('../../img/facebook.svg');
+const twitterLogo = require('../../img/twitter.svg');
+const googleLogo = require('../../img/google.svg');
+// const loginLogo = require('../../img/login.svg');
+
 
 @connect((store) => {
 	return {
