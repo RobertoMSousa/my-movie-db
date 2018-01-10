@@ -34,7 +34,6 @@ class Movie extends React.Component <any, any> {
 
 	render() {
 		const { movie } = this.props;
-		console.log('movie-->', movie);// roberto
 		return (
 			<div>
 				<img className='background-poster-img' src={`${backGroundPoster}${movie.backdrop_path}`}/>

@@ -7,6 +7,7 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
 
+import LandingPage from './components/landingPage/landingPage';
 import Movies from './components/movies/moviesList';
 import Shows from './components/shows/shows';
 import Music from './components/music/music';
@@ -27,7 +28,7 @@ ReactDOM.render(
 		<Provider store={store}>
 			<Router history={hashHistory}>
 				<Route path="/" component={App}>
-					<IndexRoute component={Movies}></IndexRoute>
+					<IndexRoute component={LandingPage}></IndexRoute>
 					<Route path="movies" name="movies" component={Movies}></Route>
 					<Route path="shows" name="shows" component={Shows}></Route>
 					<Route path="music" name="music" component={Music}></Route>

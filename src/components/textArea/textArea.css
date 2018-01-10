@@ -1,0 +1,82 @@
+
+
+.formStyle {
+	height: inherit;
+	width: inherit;
+}
+
+.formStyle input {
+	height: 95%;
+	width: 97%;
+	border: none;
+	padding: 0px;
+	margin-top: 2px;
+	float: right;
+	background-color: #d8d8d8;
+}
+
+.formStyle input:focus, .formStyle select:focus, .formStyle textarea:focus, .formStyle button:focus {
+	outline: none;
+}
+
+.formStyle input, select, textarea{
+	font-family: var(--font);
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	color: var(--white);
+	&::-webkit-input-placeholder {
+		opacity: 0;
+	}
+}
+
+.formStyle ::-webkit-input-placeholder{
+	color: var(--white);
+}
+.formStyle ::-moz-placeholder{
+	color: var(--white);
+}
+
+.formStyle :-ms-input-placeholder {
+	color: var(--white);
+}
+
+.formStyle :-moz-placeholder {
+	color: var(--white);
+}
+
+
+.hide-on-focus:focus::-webkit-input-placeholder{
+	opacity: 0;
+}
+
+.hide-on-focus:focus::-moz-placeholder{
+	opacity: 0;
+}
+
+.hide-on-focus:focus:-ms-input-placeholder {
+	opacity: 0;
+}
+
+.hide-on-focus:focus:-moz-placeholder {
+	opacity: 0;
+}
+
+
+@media all and (max-width: 1199px) {
+}
+
+@media all and (max-width: 991px) {
+	.landingPage_footer_containter {
+		grid-template-columns: 0fr 3fr 2fr 1fr;
+	}
+}
+
+@media all and (max-width: 768px) {
+	.landingPage_footer_containter {
+		grid-template-columns: 0fr 4fr 2fr 0fr;
+	}
+}
+
+@media all and (max-width: 575px) {
+}

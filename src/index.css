@@ -3,6 +3,7 @@ body {
   padding: 0;
   font-family: var(--font);
   height: 100vh;
+  overflow: hidden;
 }
 
 #root {

@@ -8,7 +8,6 @@ export default function reducer(state = {
 	fetched: false,
 	error: null,
 }, action) {
-
 	switch (action.type) {
 		case "GET_TOP_RATED_MOVIES": {
 			return { ...state, fetching: true }
@@ -17,6 +16,15 @@ export default function reducer(state = {
 			return { ...state, fetching: false, fetched: true, movies: action.payload }
 		}
 		case "GET_TOP_RATED_MOVIES_FAILED": {
+			return { ...state, fetching: false, fetched: false, error: action.payload }
+		}
+		case "GET_MOST_POPULAR_MOVIES": {
+			return { ...state, fetching: true }
+		}
+		case "GET_MOST_POPULAR_MOVIES_SUCCESS": {
+			return { ...state, fetching: false, fetched: true, movies: action.payload }
+		}
+		case "GET_MOST_POPULAR_MOVIES_FAILED": {
 			return { ...state, fetching: false, fetched: false, error: action.payload }
 		}
 		case "GET_MOVIE_DATA": {

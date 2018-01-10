@@ -14,6 +14,20 @@ export function getTopRatedMovies() {
 }
 
 
+export function getMostPopularMovies() {
+	return function(dispatch) {
+		dispatch({ type: "GET_MOST_POPULAR_MOVIES" });
+		axios.get('https://api.themoviedb.org/3/movie/popular?api_key=' + process.env.REACT_APP_API_KEY + '&language=en-US&page=1')
+			.then((response) => {
+				dispatch({ type: "GET_MOST_POPULAR_MOVIES_SUCCESS", payload: response.data })
+			})
+			.catch((err) => {
+				dispatch({ type: "GET_MOST_POPULAR_MOVIES_FAILED", payload: err })
+			})
+	}
+}
+
+
 
 export function getMovieData(movieId: number) {
 	return function(dispatch) {

@@ -1,0 +1,297 @@
+.landigPage_top_movie_teaser {
+	width: 100%;
+	height: 530px;
+	top: -5px;
+	z-index: 0;
+	position: initial;
+	background-size: cover;
+	background-position-x: center;
+	display: grid;
+	align-items: center;
+}
+
+
+.landigPage_top_title {
+	width: 250px;
+	height: 75px;
+	font-family: var(--font);
+	font-size: 35px;
+	font-weight: bold;
+	text-align: center;
+	color: var(--cloudy-blue);
+}
+
+
+.landigPage_top_title_wrapper {
+	width: 275px;
+	height: 90px;
+	line-height: 40px;
+	vertical-align: middle;
+	background-image: linear-gradient(rgba(36, 46, 65, 0.7), rgba(36, 46, 65, 0.7));
+	background-blend-mode: darken;
+	opacity: 1;
+	margin: 0 auto;
+}
+
+
+.landigPage_register-button {
+	width: 117.8px;
+	height: 53px;
+	-webkit-filter: blur(0);
+	filter: blur(0);
+	background-color: var(--lipstick);
+	margin: 0 auto;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.landigPage_register-button_text {
+	width: 153.8px;
+	height: 30px;
+	line-height: 53px;
+	font-family: var(--font);
+	font-size: 22px;
+	font-weight: bold;
+	text-align: center;
+	color: var(--cloudy-blue);
+}
+
+.landigPage_call_to_action {
+	width: 100%;
+	min-height: 595px;
+	background-color: #d8d8d8;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.landigPage_call_to_action_right {
+	height: inherit;
+	justify-content: center;
+	align-items: center;
+	align-content: space-between;
+	flex-wrap: wrap;
+	display: grid;
+	grid-template-rows: 6fr 1fr;
+}
+
+
+.landigPage_call_to_action_right_movie_poster {
+	height: 400px;
+	background-position-x: center;
+	background-position-y: top;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+
+.landigPage_call_to_action_right_movie_poster_span {
+	font-family: var(--font);
+	font-size: 28px;
+	font-weight: bold;
+	text-align: center;
+	color: #242e41;
+	color: var(--dark);
+	align-self: flex-start;
+}
+
+
+.landigPage_call_to_action_left {
+	display: grid;
+	grid-template-rows: 1fr 2fr 1fr;
+	height: inherit;
+	justify-content: center;
+	align-items: center;
+	align-content: space-between;
+	flex-wrap: wrap;
+}
+
+.landigPage_call_to_action_left_title {
+	font-size: 28px;
+	font-weight: bold;
+	text-align: center;
+	color: var(--dark);
+	padding: 30px;
+}
+.landigPage_call_to_action_left_text {
+	height: 100%;
+	font-size: 22px;
+	font-weight: bold;
+	text-align: center;
+	color: var(--dark);
+	padding: 30px;
+}
+
+
+.landingPage_download_apps_container {
+	height: 350px;
+	width: 100%;
+	display: grid;
+	grid-template-areas: "head head"
+						 "android  ios";
+	grid-template-rows: 75px 1fr;
+	grid-template-columns: 1fr 1fr;
+	font-size: 48px;
+	font-weight: bold;
+	text-align: center;
+	color: var(--cloudy-blue);
+	align-items: center;
+	background-size: cover;
+}
+
+.landingPage_download_apps_header {
+	grid-area: head;
+	align-self: center;
+	background-size: cover;
+	background-position-x: center;
+	background-position-y: center;
+}
+.landingPage_download_apps_android {
+	grid-area: android;
+}
+.landingPage_download_apps_ios {
+	grid-area: ios;
+}
+
+.landingPage_download_apps_logo{
+	cursor: pointer;
+	height: 60px;
+}
+
+
+.landingPage_subscribe_containter {
+	min-height: 300px;
+	background-color: var(--white);
+	display: grid;
+	grid-template-areas: "subscribe_title subscribe_title"
+						 "subscribe_email subscribe_email";
+	grid-template-rows: 75px 1fr;
+	grid-template-columns: 1fr 1fr;
+}
+
+.landingPage_subscribe_title{
+	grid-area: subscribe_title;
+	font-family: var(--font);
+	font-size: 48px;
+	font-weight: bold;
+	text-align: center;
+	color: #8b8a8a;
+}
+.landingPage_subscribe_email_container {
+	grid-area: subscribe_email;
+	align-items: center;
+	display: flex;
+	margin: 0 auto;
+
+}
+.landingPage_subscribe_email{
+	width: 400px;
+	height: 59px;
+	border-radius:  20px 0px 0px 20px;
+	background-color: #d8d8d8;
+	border: solid 1px #979797;
+}
+
+.landingPage_subscribe_submit{
+	width: 97px;
+	height: 60px;
+	border-radius: 0px 20px 20px 0px;
+	background-color: #ee5d47;
+	border: solid 1px #979797;
+	cursor: pointer;
+}
+
+.landingPage_subscribe_submit span {
+	width: 82px;
+	height: 21px;
+	font-family: var(--font);
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+	color: var(--white);
+	line-height: 60px;
+}
+
+.landingPage_footer_containter {
+	min-height: 200px;
+	display: grid;
+	grid-template-areas: "footer_margin_ledt footer_links footer_social footer_margin_right";
+	grid-template-rows: 1fr;
+	grid-template-columns: 1fr 3fr 2fr 1fr;
+}
+
+
+.landingPage_footer_links {
+	grid-area: footer_links;
+	display: flex;
+	align-content: space-around;
+	justify-content: center;
+	align-items: center;
+}
+
+.landingPage_footer_links span {
+	width: 94px;
+	height: 28px;
+	font-family: var(--font);
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	color: var(--cloudy-blue);
+	cursor: pointer;
+}
+.landingPage_footer_social {
+	grid-area: footer_social;
+	display: grid;
+	grid-template-areas: "footer_social_title footer_social_title footer_social_title "
+						"footer_social_twitter footer_social_facebook footer_social_google";
+	grid-template-rows: 1fr 2fr;
+	grid-template-columns: 1fr 1fr 1fr;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.landingPage_footer_social_title {
+	grid-area: footer_social_title;
+	width: 235px;
+	height: 28px;
+	font-family: var(--font);
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	color: var(--cloudy-blue);
+	justify-self: center;
+}
+
+.landingPage_footer_social_twitter {
+	grid-area: footer_social_twitter;
+}
+
+.landingPage_footer_social_facebook {
+	grid-area: footer_social_facebook;
+}
+
+.landingPage_footer_social_google {
+	grid-area: footer_social_google;
+}
+
+.landingPage_footer_social_twitter img, .landingPage_footer_social_facebook img, .landingPage_footer_social_google img {
+	cursor: pointer;
+}
+
+@media all and (max-width: 1199px) {
+}
+
+@media all and (max-width: 991px) {
+	.landingPage_footer_containter {
+		grid-template-columns: 0fr 3fr 2fr 1fr;
+	}
+}
+
+@media all and (max-width: 768px) {
+	.landingPage_footer_containter {
+		grid-template-columns: 0fr 4fr 2fr 0fr;
+	}
+}
+
+@media all and (max-width: 575px) {
+}
