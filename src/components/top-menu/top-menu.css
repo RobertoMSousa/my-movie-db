@@ -25,7 +25,7 @@
 }
 
 .topBarListName.selected, .topBarListName:hover{
-	color: var(--blue-green);
+	color: var(--neon-blue);
 }
 
 
@@ -39,7 +39,7 @@
 	width: 176px;
 	height: 11px;
 	margin: auto;
-	background-color: var(--blue-green);
+	background-color: var(--neon-blue);
 }
 
 .remove_link_style {

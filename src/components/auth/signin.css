@@ -1,0 +1,234 @@
+
+
+
+.signinMainDiv {
+	height: calc(100% - 90px);
+	width: 100%;
+	display: flex;
+}
+
+.removeBlur {
+	-webkit-filter: blur(0px);
+	-moz-filter: blur(0px);
+	-o-filter: blur(0px);
+	-ms-filter: blur(0px);
+	filter: blur(0px);
+}
+
+
+.backgroundSignInImage {
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	z-index: -10;
+	background-position: center;
+	background-size: cover;
+}
+
+
+.signinContainer {
+	height: 700px;
+	width: 500px;
+	background-color: rgba(36,46,65,0.6);
+	margin: 0 auto;
+	align-self: center;
+	display: grid;
+	grid-template-areas: "signinContainerTop signinContainerTop"
+						 "signinContainerBottom  signinContainerBottom";
+	grid-template-rows: 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
+}
+
+
+
+.signinContainerTop {
+	grid-area: signinContainerTop;
+	display: grid;
+	grid-template-areas: "signinContainerTopHeader signinContainerTopHeader"
+						 "signinContainerTopNavigation  signinContainerTopNavigation";
+	grid-template-rows: 3fr 1fr;
+	grid-template-columns: 1fr 1fr;
+}
+
+.signinContainerTopHeader {
+	grid-area: signinContainerTopHeader;
+	display: grid;
+	grid-template-areas: "signinContainerTopHeaderTitle signinContainerTopHeaderLogo"
+						 "signinContainerTopHeaderSlogan  signinContainerTopHeaderSlogan";
+	grid-template-rows: 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+}
+
+.signinContainerTopHeaderTitle {
+	grid-area: signinContainerTopHeaderTitle;
+	font-family: var(--font);
+	font-size: 36px;
+	font-weight: bold;
+	text-align: center;
+	color: #ffffff;
+	justify-self: right;
+}
+.signinContainerTopHeaderLogo {
+	grid-area: signinContainerTopHeaderLogo;
+	height: 100px;
+}
+.signinContainerTopHeaderSlogan {
+	grid-area: signinContainerTopHeaderSlogan;
+	font-family: var(--font);
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	color: #ffffff;
+}
+
+.loginBackImage {
+	display: block;
+	position: absolute;
+	z-index: -2;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+}
+
+.signinContainerTopNavigation {
+	grid-area: signinContainerTopNavigation;
+	display: grid;
+	grid-template-areas: "signinContainerTopNavigationLeft signinContainerTopNavigationRight";
+	grid-template-rows: 1fr;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+}
+
+.signinContainerTopNavigationLeft {
+	grid-area: signinContainerTopNavigationLeft;
+	font-family: var(--font);
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	color: #d8d8d8;
+}
+
+.signinContainerTopNavigationLeft.selected {
+	color: var(--neon-blue);
+}
+
+.signinContainerTopNavigationRight {
+	grid-area: signinContainerTopNavigationRight;
+	opacity: 0.7;
+	font-family: var(--font);
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	color: #d8d8d8;
+}
+
+.signinContainerTopNavigationRight.selected {
+	color: var(--neon-blue);
+}
+
+.signinContainerLineIndicator{
+	margin: auto;
+	background-color: var(--neon-blue);
+	grid-area: signinContainerTopNavigationLeft;
+	width: 125px;
+	height: 11px;
+	opacity: 0;
+}
+.signinContainerLineIndicator.selected {
+	opacity: 1;
+}
+
+.signinContainerBottom {
+	grid-area: signinContainerBottom;
+	display: grid;
+	grid-template-areas: "signinContainerBottomEmail"
+						"signinContainerBottomPassword"
+						"signinContainerBottomLoginButton"
+						"signinContainerBottomOrText"
+						"signinContainerBottomFacebookButton";
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr;
+	align-items: center;
+	justify-items: center;
+}
+
+.signinContainerBottomEmail, .signinContainerBottomPassword, .signUpContainerBottomEmail, .signUpContainerBottomPassword, .signUpContainerBottomRepeatPassword {
+	width: 300px;
+	height: 40px;
+	border-radius: 20px;
+	background-color: rgba(65, 36, 36, 0.35);
+	border: solid 2px #00d3ff;
+	border: solid 2px var(--neon-blue);
+}
+
+.signinContainerBottomEmail {
+	grid-area: signinContainerBottomEmail;
+}
+.signinContainerBottomPassword {
+	grid-area: signinContainerBottomPassword;
+}
+
+.signinContainerBottomOrText {
+	grid-area: signinContainerBottomOrText;;
+	font-family: var(--font);
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	color: var(--cloudy-blue);
+}
+
+.signinContainerBottomLoginButton {
+	grid-area: signinContainerBottomLoginButton;
+	background-color: var(--neon-blue);
+	border: solid 1px #979797;
+}
+
+.signinContainerBottomFacebookButton {
+	grid-area: signinContainerBottomFacebookButton;
+	background-color: #1e4fba;
+}
+
+.signinContainerBottomLoginButton, .signinContainerBottomFacebookButton {
+	width: 200px;
+	height: 40px;
+	border-radius: 20px;
+	line-height: 40px;
+	cursor: pointer;
+}
+
+.signinContainerBottomFacebookButton span, .signinContainerBottomLoginButton span {
+	font-family: var(--font);
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+	color: var(--cloudy-blue);
+}
+
+.signinContainerBottomEmailForgot {
+	font-family: var(--font);
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	color: var(--cloudy-blue);
+	cursor: pointer;
+}
+
+
+
+
+.signUpContainerBottom {
+	grid-area: signinContainerBottom;
+	display: grid;
+	grid-template-areas: "signUpContainerBottomEmail"
+						"signinContainerBottomPassword"
+						"signUpContainerBottomRepeatPassword"
+						"signinContainerBottomLoginButton"
+						"signinContainerBottomOrText"
+						"signinContainerBottomFacebookButton";
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr;
+	align-items: center;
+	justify-items: center;
+}

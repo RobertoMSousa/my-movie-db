@@ -124,7 +124,7 @@ class LandingPage extends React.Component <any, any> {
 					</div>
 					<div className='landingPage_subscribe_email_container'>
 						<div className='landingPage_subscribe_email'>
-							<TextArea placeholder='email address' callbackFromParent={this.handleEmail}/>
+							<TextArea placeholder='email address' callbackFromParent={this.handleEmail} backgroundColor='#d8d8d8'/>
 						</div>
 						<div onClick={this.handleSubmit} className='landingPage_subscribe_submit'>
 							<span>Submit</span>
