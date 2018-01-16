@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 
 // components
-import BurgerMenu from '../burgerMenu/burgerMenu';
+// import BurgerMenu from '../burgerMenu/burgerMenu';
 
 // css files
 import './top-menu.css';
@@ -37,7 +37,7 @@ class TopMenu extends React.Component <any, any> {
 		const arr: Array<string> = ['movies', 'shows', 'music', 'others'];
 		return (
 			<div className="topBarContainer">
-				<BurgerMenu/>
+				{/* <BurgerMenu/> */}
 				{
 					arr.map((value: string) => {
 						return(

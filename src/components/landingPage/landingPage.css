@@ -58,7 +58,6 @@
 
 .landigPage_call_to_action {
 	width: 100%;
-	min-height: 595px;
 	background-color: #d8d8d8;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
