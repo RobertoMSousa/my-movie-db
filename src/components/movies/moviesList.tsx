@@ -1,17 +1,20 @@
 
 import * as React from 'react';
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 
-// assets
-import './movies.css';
-
-import { getTopRatedMovies } from "../../actions/movies/movies";
+// interfaces
+import { getTopRatedMovies } from '../../actions/movies/movies';
 import TopMenu from '../top-menu/top-menu';
 
-
+// interfaces
 import * as Movie from '../../interfaces/movie';
 
+// external components
 
+// css
+import './movies.css';
+
+// static assets
 const posterPath: string = 'http://image.tmdb.org/t/p/w154';
 
 @connect((store) => {
@@ -41,25 +44,25 @@ class MoviesList extends React.Component <any, any> {
 		return (
 			<div>
 				<TopMenu path={this.props.route.path}/>
-				<div className='movieListMainContainer'>
+				<div className="movieListMainContainer">
 					{
 						moviesList &&
-						moviesList.map((movie: Movie.IMovie)=> {
+						moviesList.map((movie: Movie.IMovie) => {
 							return(
-								<div key={movie.id} className='movieListContainer'>
-									<div className='movieListMainImage'>
-										<img src={posterPath + movie.poster_path} alt=''/>
+								<div key={movie.id} className="movieListContainer">
+									<div className="movieListMainImage">
+										<img src={posterPath + movie.poster_path} alt=""/>
 									</div>
-									<div className='moviesListBottomContainer'>
-										<div className='movieListMovieTitle'>
+									<div className="moviesListBottomContainer">
+										<div className="movieListMovieTitle">
 											<span>{movie.title}</span>
 										</div>
-										<div className='movieListMovieReleaseDate'>
+										<div className="movieListMovieReleaseDate">
 											<span>{movie.release_date}</span>
 										</div>
 									</div>
 								</div>
-							)
+							);
 						})
 					}
 				</div>
@@ -69,6 +72,3 @@ class MoviesList extends React.Component <any, any> {
 }
 
 export default MoviesList;
-
-
-// <img src={`${posterPath}${movie.poster_path}`} alt=''/>
