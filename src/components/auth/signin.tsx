@@ -40,7 +40,6 @@ class SignInPage extends React.Component <any, any> {
 
 	componentWillMount() {
 		try {
-			console.log('this.state-->', this.state); // roberto
 			this.setState({movieNumber: Math.floor(Math.random() * Math.floor(20))});
 			this.props.dispatch(getMostPopularMovies());
 		} catch (e) {
@@ -50,7 +49,6 @@ class SignInPage extends React.Component <any, any> {
 
 	hanglePassword(password: string) {
 		this.setState({ password: password });
-		console.log('password-->', password); // roberto
 		/*
 		TODO:
 		*/
@@ -59,19 +57,24 @@ class SignInPage extends React.Component <any, any> {
 
 	handleEmail(email: string) {
 		this.setState({ email: email });
-		console.log('email-->', email); // roberto
 	}
 
 	handleForgot() {
-		console.log('handleForgot'); // roberto
+		/*
+		TODO:
+		*/
 	}
 
 	handleSubmit() {
-		console.log('handleSubmit'); // roberto
+		/*
+		TODO:
+		*/
 	}
 
 	handleFacebookLogin() {
-		console.log('handleFacebookLogin'); // roberto
+		/*
+		TODO:
+		*/
 	}
 
 	render() {

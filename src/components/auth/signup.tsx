@@ -61,11 +61,15 @@ class SignUpPage extends React.Component <any, any> {
 	}
 
 	handleSignUp() {
-		console.log('handleSignUpFaceook'); // roberto
+		/*
+		TODO:
+		*/
 	}
 
 	handleSignUpFacebook() {
-		console.log('handleSignUpFaceook'); // roberto
+		/*
+		TODO:
+		*/
 	}
 
 	render() {
