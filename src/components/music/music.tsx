@@ -1,8 +1,6 @@
 
 import * as React from 'react';
-import { connect } from "react-redux";
-
-
+import { connect } from 'react-redux';
 
 import TopMenu from '../top-menu/top-menu';
 // assets
@@ -16,7 +14,7 @@ import './music.css';
 // class
 class Music extends React.Component <any, any> {
 
-	constructor(props) {
+	constructor(props: any) {
 		super(props);
 		this.state = {
 		};
