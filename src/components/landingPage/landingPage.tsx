@@ -3,6 +3,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import isEmail from 'validator/lib/isEmail';
 import swal from 'sweetalert';
+import { Link } from 'react-router';
 
 // interfaces
 import * as Movie from '../../interfaces/movie';
@@ -14,6 +15,7 @@ import TextArea from '../textArea/textArea';
 // css
 import './landingPage.css';
 
+// actions
 import { getMostPopularMovies } from '../../actions/movies/movies';
 import { subscribe_newletter } from '../../actions/newsletter/newsletter';
 
@@ -39,7 +41,8 @@ class LandingPage extends React.Component <any, any> {
 	constructor(props: any) {
 		super(props);
 		this.state = {
-			email: ''
+			email: '',
+			movieNumber: 0
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleEmail = this.handleEmail.bind(this);
@@ -48,6 +51,7 @@ class LandingPage extends React.Component <any, any> {
 	componentDidMount() {
 		try {
 			this.props.dispatch(getMostPopularMovies());
+			this.setState({movieNumber: Math.floor(Math.random() * Math.floor(20))});
 		} catch (e) {
 			console.error('error-->', e);
 		}
@@ -56,7 +60,6 @@ class LandingPage extends React.Component <any, any> {
 	handleSubmit() {
 		try {
 			if (isEmail(this.state.email)) {
-				swal('Good job!', 'Thanks for Subscribing!', 'success');
 				this.props.dispatch(subscribe_newletter(this.state.email));
 			} else {
 				swal('Uppps!', 'The email is not valid!', 'error');
@@ -78,7 +81,7 @@ class LandingPage extends React.Component <any, any> {
 				<TopMenu path={this.props.route.path}/>
 				{
 					movies &&
-					<div className="landigPage_top_movie_teaser" style={{backgroundImage : `url(${imagePath + movies[Math.floor(Math.random() * Math.floor(20))].backdrop_path})`}}>
+					<div className="landigPage_top_movie_teaser" style={{backgroundImage : `url(${imagePath + movies[this.state.movieNumber].backdrop_path})`}}>
 						<div className="landigPage_top_title_wrapper">
 							<span className="landigPage_top_title">Lorem ipsum dolor sit amet</span>
 						</div>
@@ -102,7 +105,7 @@ class LandingPage extends React.Component <any, any> {
 							</div>
 						</div>
 						<div className="landigPage_call_to_action_right">
-							<div className="landigPage_call_to_action_right_movie_poster" style={{backgroundImage : `url(${posterPath + movies[Math.floor(Math.random() * Math.floor(20))].poster_path})`}}/>
+							<div className="landigPage_call_to_action_right_movie_poster" style={{backgroundImage : `url(${posterPath + movies[this.state.movieNumber].poster_path})`}}/>
 							<div className="landigPage_call_to_action_right_movie_poster_span">
 								<span>Lorem ipsum dolor sit amet</span>
 							</div>
@@ -113,12 +116,14 @@ class LandingPage extends React.Component <any, any> {
 					<div className="landingPage_download_apps_header">
 						<span>Download our apps</span>
 					</div>
-					<div className="landingPage_download_apps_android">
+					
+					<Link className="landingPage_download_apps_android" to="comingsoon">
 						<img src={googlePlayLogo}  className="landingPage_download_apps_logo" alt="" />
-					</div>
-					<div className="landingPage_download_apps_ios">
+					</Link>
+
+					<Link className="landingPage_download_apps_ios" to="comingsoon">
 						<img src={appStoreLogo} className="landingPage_download_apps_logo" alt="" />
-					</div>
+					</Link>
 				</div>
 				<div className="landingPage_subscribe_containter">
 					<div className="landingPage_subscribe_title">
