@@ -1,0 +1,36 @@
+.comingSoonMainContainer {
+    display: grid;
+    grid-template-areas: "comingSoonImage"
+                        "comingSoonText"
+                        "comingSoonNewsletter";
+	grid-template-rows: 2fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    height: calc(100vh - 50px) !important;
+    padding-left: 200px;
+    padding-right: 200px;
+    margin-top: 50px;
+}
+
+.comingSoonImage {
+    grid-area: comingSoonImage;
+}
+
+.comingSoonImage img {
+    height: 500px;
+}
+
+.comingSoonText {
+    grid-area: comingSoonText;
+}
+
+.comingSoonText span {
+	font-family: var(--font);
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	color: var(--cloudy-blue);
+}
+
+.comingSoonNewsletter {
+    grid-area: comingSoonNewsletter;
+}
