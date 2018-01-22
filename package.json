@@ -1,7 +1,7 @@
 {
   "name": "my-movie-db",
   "version": "0.1.0",
-  "description": "A starting point for Node.js express apps with TypeScript",
+  "description": "movie DB react app",
   "repository": {
     "type": "git",
     "url": "https://github.com/RobertoMSousa/my-movie-db"
@@ -33,6 +33,7 @@
   },
   "scripts": {
     "start": "react-scripts-ts start",
+    "develop": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
