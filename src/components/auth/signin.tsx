@@ -2,18 +2,27 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
+import isEmail from 'validator/lib/isEmail';
+import swal from 'sweetalert';
 
+// external components
 import TopMenu from '../top-menu/top-menu';
-
 import TextArea from '../textArea/textArea';
+
+// css
 import './signin.css';
 
-// assets
+// static assets
 const loginBackImage = require('../../img/login-back-image.svg');
 const appLogo = require('../../img/logo.svg');
 const imagePath: string = 'https://image.tmdb.org/t/p/w1920';
-import { getMostPopularMovies } from '../../actions/movies/movies';
+
+// external components
 import * as Movie from '../../interfaces/movie';
+
+// actions
+import { getMostPopularMovies } from '../../actions/movies/movies';
+import { signin_user } from '../../actions/auth/auth';
 
 @connect((store) => {
 	return {
@@ -66,9 +75,11 @@ class SignInPage extends React.Component <any, any> {
 	}
 
 	handleSubmit() {
-		/*
-		TODO:
-		*/
+		if (!isEmail(this.state.email)) {
+			swal('Uppps!', 'The email is not valid!', 'error');
+		} else {
+			this.props.dispatch(signin_user(this.state.email, this.state.password));
+		}
 	}
 
 	handleFacebookLogin() {
