@@ -85,9 +85,9 @@ class LandingPage extends React.Component <any, any> {
 						<div className="landigPage_top_title_wrapper">
 							<span className="landigPage_top_title">Lorem ipsum dolor sit amet</span>
 						</div>
-						<div className="landigPage_register-button">
+						<Link className="landigPage_register-button remove_link_style" to="/signup">
 							<span className="landigPage_register-button_text">Join us!</span>
-						</div>
+						</Link>
 					</div>
 				}
 				{
@@ -100,9 +100,9 @@ class LandingPage extends React.Component <any, any> {
 							<div className="landigPage_call_to_action_left_text">
 								<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tristique magna sit amet purus gravida quis. Purus sit amet luctus venenatis lectus. In ante metus dictum at tempor commodo ullamcorper a lacus. Nulla pellentesque dignissim enim sit amet venenatis urna. Adipiscing bibendum est ultricies integer quis auctor elit sed vulputate.</span>
 							</div>
-							<div className="landigPage_register-button">
+							<Link className="landigPage_register-button remove_link_style" to="/signup">
 								<span className="landigPage_register-button_text">Join us!</span>
-							</div>
+							</Link>
 						</div>
 						<div className="landigPage_call_to_action_right">
 							<div className="landigPage_call_to_action_right_movie_poster" style={{backgroundImage : `url(${posterPath + movies[this.state.movieNumber].poster_path})`}}/>
