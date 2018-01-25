@@ -49,7 +49,7 @@
 
 
 .topMenuLoginIcon {
-	height: 22px;
+	height: 40px;
 	cursor: pointer;
 }
 
@@ -69,9 +69,15 @@
 	.topBarListName {
 		display: none;
 	}
+	.topMenuLoginIcon {
+		display: none;
+	}
 }
 @media all and (max-width: 575px) {
 	.topBarListName {
+		display: none;
+	}
+	.topMenuLoginIcon {
 		display: none;
 	}
 }
