@@ -9,7 +9,7 @@ import { Link } from 'react-router';
 // css files
 import './top-menu.css';
 // svg and images
-const loginLogo = require('../../img/login.svg');
+const loginLogo = require('../../img/login-locker.svg');
 
 @connect((store) => {
 	return {
@@ -36,7 +36,7 @@ class TopMenu extends React.Component <any, any> {
 	render() {
 		const arr: Array<string> = ['movies', 'shows', 'music', 'others'];
 		return (
-			<div className="topBarContainer">
+			<div className="topBarContainer noSelect">
 				{/* <BurgerMenu/> */}
 				{
 					arr.map((value: string) => {
@@ -50,7 +50,9 @@ class TopMenu extends React.Component <any, any> {
 						);
 					})
 				}
-				<img src={loginLogo} className="topMenuLoginIcon"/>
+				<Link className="remove_link_style" to="/signin">
+					<img src={loginLogo} className="topMenuLoginIcon noSelect"/>
+				</Link>
 			</div>
 		);
 	}

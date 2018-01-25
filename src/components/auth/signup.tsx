@@ -1,23 +1,33 @@
 
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
+import isEmail from 'validator/lib/isEmail';
+import swal from 'sweetalert';
 
-// import isEmail from 'validator/lib/isEmail';
+// external components
 import TopMenu from '../top-menu/top-menu';
 import TextArea from '../textArea/textArea';
+
+// css
 import './signin.css';
 
-// assets
+// static assets
 const loginBackImage = require('../../img/login-back-image.svg');
 const appLogo = require('../../img/logo.svg');
 const imagePath: string = 'https://image.tmdb.org/t/p/w1920';
-import { getMostPopularMovies } from '../../actions/movies/movies';
+
+// external components
 import * as Movie from '../../interfaces/movie';
+
+// actions
+import { getMostPopularMovies } from '../../actions/movies/movies';
+import { signup_user } from '../../actions/auth/auth';
 
 @connect((store) => {
 	return {
 		movies: store.movies.movies.results,
+		message: store.auth.message.message
 	};
 })
 
@@ -37,6 +47,14 @@ class SignUpPage extends React.Component <any, any> {
 		this.handleRepeatPassword = this.handleRepeatPassword.bind(this);
 		this.handleSignUp = this.handleSignUp.bind(this);
 		this.handleSignUpFacebook = this.handleSignUpFacebook.bind(this);
+	}
+
+	componentWillReceiveProps(nextProps: any) {
+		console.log('message-->', nextProps.message); // roberto
+		if (nextProps.message === 'account created') {
+			swal('Congrats!', 'account created', 'success');
+			hashHistory.push('signin');
+		}
 	}
 
 	componentDidMount() {
@@ -61,9 +79,17 @@ class SignUpPage extends React.Component <any, any> {
 	}
 
 	handleSignUp() {
-		/*
-		TODO:
-		*/
+		if (!isEmail(this.state.email)) {
+			swal('Uppps!', 'The email is not valid!', 'error');
+		} else {
+			console.log('password-->', this.state.password); // roberto
+			console.log('password repeated-->', this.state.repeatpassword); // roberto
+			if (this.state.password !== this.state.repeatpassword) {
+				swal('Uppps!', 'The passwords do not match', 'error');
+			} else  {
+				this.props.dispatch(signup_user(this.state.email, this.state.password, this.state.repeatpassword));
+			}
+		}
 	}
 
 	handleSignUpFacebook() {
@@ -83,13 +109,13 @@ class SignUpPage extends React.Component <any, any> {
 						<div className="backgroundSignInImage" style={{backgroundImage : `url(${imagePath + movies[this.state.movieNumber].backdrop_path})`}}/>
 						<div className="signinContainer">
 							<div className="signinContainerTop">
-								<div className="signinContainerTopHeader">
+								<div className="signinContainerTopHeader noSelect">
 									<img className="loginBackImage" src={loginBackImage}/>
 									<span className="signinContainerTopHeaderTitle">MovieDB</span>
 									<img className="signinContainerTopHeaderLogo" src={appLogo}/>
 									<span className="signinContainerTopHeaderSlogan">Start your journey. Today.</span>
 								</div>
-								<div className="signinContainerTopNavigation">
+								<div className="signinContainerTopNavigation noSelect">
 									<div className="signinContainerTopNavigationLeft">
 										<Link className="remove_link_style" to="signin">
 											<span>Sign In</span>
@@ -112,11 +138,11 @@ class SignUpPage extends React.Component <any, any> {
 								<div className="signUpContainerBottomRepeatPassword">
 									<TextArea placeholder="repeat password" callbackFromParent={this.handleRepeatPassword} backgroundColor="rgba(65, 36, 36, 0)"/>
 								</div>
-								<div className="signinContainerBottomLoginButton">
-									<span onClick={this.handleSignUp}>Sign Up</span>
+								<div className="signinContainerBottomLoginButton noSelect" onClick={this.handleSignUp}>
+									<span>Sign Up</span>
 								</div>
-								<span className="signinContainerBottomOrText" >OR</span>
-								<div className="signinContainerBottomFacebookButton" onClick={this.handleSignUpFacebook}>
+								<span className="signinContainerBottomOrText noSelect" >OR</span>
+								<div className="signinContainerBottomFacebookButton noSelect" onClick={this.handleSignUpFacebook}>
 									<span>Sign Up with facebook</span>
 								</div>
 							</div>
