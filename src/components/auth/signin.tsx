@@ -1,7 +1,7 @@
 
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 import isEmail from 'validator/lib/isEmail';
 import swal from 'sweetalert';
 
@@ -27,6 +27,9 @@ import { signin_user } from '../../actions/auth/auth';
 @connect((store) => {
 	return {
 		movies: store.movies.movies.results,
+		message: store.auth.message.message,
+		status: store.auth.status,
+		user: store.auth.user
 	};
 })
 
@@ -47,6 +50,17 @@ class SignInPage extends React.Component <any, any> {
 		this.handleFacebookLogin = this.handleFacebookLogin.bind(this);
 	}
 
+	componentWillReceiveProps(nextProps: any) {
+		if (nextProps.status === 204) {
+			swal('Error!', 'email or password not valid', 'error');
+		} else {
+			if (nextProps.status === 200) {
+				swal('Congrats!', 'You just logged in!', 'success');
+				hashHistory.push('user');
+			}
+		}
+	}
+
 	componentWillMount() {
 		try {
 			this.setState({movieNumber: Math.floor(Math.random() * Math.floor(20))});
@@ -58,10 +72,6 @@ class SignInPage extends React.Component <any, any> {
 
 	hanglePassword(password: string) {
 		this.setState({ password: password });
-		/*
-		TODO:
-		*/
-
 	}
 
 	handleEmail(email: string) {

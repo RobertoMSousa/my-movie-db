@@ -50,7 +50,6 @@ class SignUpPage extends React.Component <any, any> {
 	}
 
 	componentWillReceiveProps(nextProps: any) {
-		console.log('message-->', nextProps.message); // roberto
 		if (nextProps.message === 'account created') {
 			swal('Congrats!', 'account created', 'success');
 			hashHistory.push('signin');
@@ -82,11 +81,12 @@ class SignUpPage extends React.Component <any, any> {
 		if (!isEmail(this.state.email)) {
 			swal('Uppps!', 'The email is not valid!', 'error');
 		} else {
-			console.log('password-->', this.state.password); // roberto
-			console.log('password repeated-->', this.state.repeatpassword); // roberto
 			if (this.state.password !== this.state.repeatpassword) {
 				swal('Uppps!', 'The passwords do not match', 'error');
 			} else  {
+				/*
+				TODO: send the user confirmation email
+				*/
 				this.props.dispatch(signup_user(this.state.email, this.state.password, this.state.repeatpassword));
 			}
 		}
