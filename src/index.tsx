@@ -1,11 +1,10 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-// import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import { Provider } from 'react-redux';
 
 // import App from './App';
 import Routes from './routes';
-// import registerServiceWorker from './registerServiceWorker';
+import registerServiceWorker from './registerServiceWorker';
 
 // css code
 import './index.css';
@@ -23,4 +22,4 @@ ReactDOM.render(
 	</div>,
 	app);
 
-// registerServiceWorker();
+registerServiceWorker();

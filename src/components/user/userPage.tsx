@@ -1,9 +1,6 @@
 
 import * as React from 'react';
 import { connect } from 'react-redux';
-// import { Link, hashHistory } from 'react-router';
-// import isEmail from 'validator/lib/isEmail';
-// import swal from 'sweetalert';
 
 // external components
 import TopMenu from '../top-menu/top-menu';
@@ -25,7 +22,7 @@ import { get_protected_route } from '../../actions/user/user';
 })
 
 // class
-class SignUpPage extends React.Component <any, any> {
+class UserPage extends React.Component <any, any> {
 
 	constructor(props: any) {
 		super(props);
@@ -34,6 +31,7 @@ class SignUpPage extends React.Component <any, any> {
 	}
 
 	componentWillMount() {
+		console.log('token-->', localStorage); // roberto
 		this.props.dispatch(get_protected_route());
 	}
 
@@ -48,4 +46,4 @@ class SignUpPage extends React.Component <any, any> {
 	}
 }
 
-export default SignUpPage;
+export default UserPage;

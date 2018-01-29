@@ -1,7 +1,7 @@
 
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { Link, hashHistory } from 'react-router';
+import { Link } from 'react-router';
 import isEmail from 'validator/lib/isEmail';
 import swal from 'sweetalert';
 
@@ -56,7 +56,6 @@ class SignInPage extends React.Component <any, any> {
 		} else {
 			if (nextProps.status === 200) {
 				swal('Congrats!', 'You just logged in!', 'success');
-				hashHistory.push('user');
 			}
 		}
 	}
