@@ -1,6 +1,7 @@
 
 import * as React from 'react';
 import { connect } from 'react-redux';
+import { hashHistory } from 'react-router';
 
 // external components
 import TopMenu from '../top-menu/top-menu';
@@ -16,8 +17,8 @@ import './user.css';
 import { get_protected_route } from '../../actions/user/user';
 
 @connect((store) => {
-	console.log('store user-->', store); // roberto
 	return {
+		user: store.auth.message.data
 	};
 })
 
@@ -31,12 +32,15 @@ class UserPage extends React.Component <any, any> {
 	}
 
 	componentWillMount() {
-		console.log('token-->', localStorage); // roberto
-		this.props.dispatch(get_protected_route());
+		const { user } = this.props;
+		if (!user || !user.isAuthenticated) {
+			hashHistory.push('signin');
+		} else {
+			this.props.dispatch(get_protected_route());
+		}
 	}
 
 	render() {
-		// const user: any = this.props.user;
 		return (
 			<div style={{'height': 'inherit'}}>
 				<TopMenu path={this.props.route.path}/>``
