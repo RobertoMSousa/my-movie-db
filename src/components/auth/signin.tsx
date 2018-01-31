@@ -1,7 +1,7 @@
 
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 import isEmail from 'validator/lib/isEmail';
 import swal from 'sweetalert';
 
@@ -25,11 +25,10 @@ import { getMostPopularMovies } from '../../actions/movies/movies';
 import { signin_user } from '../../actions/auth/auth';
 
 @connect((store) => {
+	console.log('store-->', store); // roberto
 	return {
 		movies: store.movies.movies.results,
-		message: store.auth.message.message,
-		status: store.auth.status,
-		user: store.auth.user
+		user: store.auth.message.data
 	};
 })
 
@@ -51,11 +50,14 @@ class SignInPage extends React.Component <any, any> {
 	}
 
 	componentWillReceiveProps(nextProps: any) {
-		if (nextProps.status === 204) {
-			swal('Error!', 'email or password not valid', 'error');
-		} else {
-			if (nextProps.status === 200) {
+		console.log('user-->', nextProps); // roberto
+		if (nextProps.user) {
+			if (nextProps.user.isAuthenticated) {
 				swal('Congrats!', 'You just logged in!', 'success');
+				// redirect
+				hashHistory.push('/user');
+			} else {
+				swal('Error!', 'email or password not valid', 'error');
 			}
 		}
 	}
