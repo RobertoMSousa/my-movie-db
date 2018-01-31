@@ -1,5 +1,3 @@
-
-
 import 'whatwg-fetch';
 
 const backendUrl: string = process.env.BACKEND_SERVER_URL ? <string> process.env.BACKEND_SERVER_URL : 'http://localhost:8080';
@@ -17,9 +15,9 @@ export function get_protected_route() {
 		}).then(function(response: any) {
 			return response.json();
 		}).then(function(response: any) {
-			dispatch({ type: 'USER_ACCOUNT_SUCCESS',  status: response.status, payload: response.data });
+			dispatch({ type: 'USER_ACCOUNT_SUCCESS', payload: response.data });
 		}).catch(function(err: any) {
-			dispatch({ type: 'USER_ACCOUNT_FAILED', status: err.status, err: err});
+			dispatch({ type: 'USER_ACCOUNT_FAILED', err: err});
 		});
 	};
 }

@@ -18,7 +18,7 @@ export function signup_user(email: string, password: string, passwordRepeated: s
 		}).then(function(response: any) {
 			dispatch({ type: 'SIGNUP_USER_SUCCESS', payload: response });
 		}).catch(function(err: any) {
-			dispatch({ type: 'SIGNUP_USER_FAILED', status: err.status, payload: err});
+			dispatch({ type: 'SIGNUP_USER_FAILED', payload: err});
 		});
 	};
 }
@@ -37,9 +37,9 @@ export function signin_user(email: string, password: string) {
 		}).then(function(response: any) {
 			return response.json();
 		}).then(function(response: any) {
-			dispatch({ type: 'USER_ACCOUNT_SUCCESS',  payload: response });
+			dispatch({ type: 'SIGNIN_USER_SUCCESS',  payload: response });
 		}).catch(function(err: any) {
-			dispatch({ type: 'SIGNIN_USER_FAILED', status: err.status, payload: err});
+			dispatch({ type: 'SIGNIN_USER_FAILED', payload: err});
 		});
 	};
 }
@@ -59,7 +59,7 @@ export function signout_user(email: string, password: string) {
 		}).then(function(response: any) {
 			dispatch({ type: 'SIGNOUT_USER_SUCCESS',  payload: response });
 		}).catch(function(err: any) {
-			dispatch({ type: 'SIGNOUT_USER_FAILED', status: err.status, payload: err});
+			dispatch({ type: 'SIGNOUT_USER_FAILED', payload: err});
 		});
 	};
 }

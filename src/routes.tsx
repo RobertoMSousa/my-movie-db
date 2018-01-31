@@ -18,7 +18,6 @@ import UserPage from './components/user/userPage';
 
 @connect((store) => {
 	return {
-		user: store.auth.user
 	};
 })
 
