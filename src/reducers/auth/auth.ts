@@ -3,18 +3,20 @@
 
 export default function reducer(
 	state: any= {
+	status: Number,
 	message: {},
 	fetching: false,
 	fetched: false,
 	error: null,
 	}, 
 	action: any) {
+	console.log('action-->', action); // roberto
 	switch (action.type) {
 		case 'SIGNIN_USER': {
 			return { ...state, fetching: true };
 		}
 		case 'SIGNIN_USER_SUCCESS': {
-			return { ...state, fetching: false, fetched: true, message: action.payload };
+			return { ...state, fetching: false, fetched: true, message: action.payload};
 		}
 		case 'SIGNIN_USER_FAILED': {
 			return { ...state, fetching: false, fetched: false, error: action.payload };
