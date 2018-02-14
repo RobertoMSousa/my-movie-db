@@ -10,7 +10,6 @@ export default function reducer(
 	error: null,
 	}, 
 	action: any) {
-	console.log('action-->', action); // roberto
 	switch (action.type) {
 		case 'SIGNIN_USER': {
 			return { ...state, fetching: true };

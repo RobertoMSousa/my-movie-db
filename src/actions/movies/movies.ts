@@ -13,7 +13,6 @@ export function getTopRatedMovies() {
 		}).then(function(response: any) {
 			return response.json();
 		}).then(function(response: any) {
-			console.log('response->', response); // roberto
 			dispatch({ type: 'GET_TOP_RATED_MOVIES_SUCCESS', payload: response });
 		}).catch(function(err: any) {
 			dispatch({ type: 'GET_TOP_RATED_MOVIES_FAILED', payload: err});
@@ -33,7 +32,6 @@ export function getMostPopularMovies() {
 		}).then(function(response: any) {
 			return response.json();
 		}).then(function(response: any) {
-			console.log('response->', response); // roberto
 			dispatch({ type: 'GET_MOST_POPULAR_MOVIES_SUCCESS', payload: response });
 		}).catch(function(err: any) {
 			dispatch({ type: 'GET_MOST_POPULAR_MOVIES_FAILED', status: err.status, payload: err});
@@ -53,7 +51,6 @@ export function getMovieData(movieId: number) {
 		}).then(function(response: any) {
 			return response.json();
 		}).then(function(response: any) {
-			console.log('response->', response); // roberto
 			dispatch({ type: 'GET_MOVIE_DATA_SUCCESS', payload: response });
 		}).catch(function(err: any) {
 			dispatch({ type: 'GET_MOVIE_DATA_FAILED', status: err.status, payload: err});
