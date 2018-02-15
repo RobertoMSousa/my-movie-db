@@ -25,7 +25,6 @@ import { getMostPopularMovies } from '../../actions/movies/movies';
 import { signin_user } from '../../actions/auth/auth';
 
 @connect((store) => {
-	console.log('store-->', store); // roberto
 	return {
 		movies: store.movies.movies.results,
 		user: store.auth.message.data
@@ -50,7 +49,6 @@ class SignInPage extends React.Component <any, any> {
 	}
 
 	componentWillReceiveProps(nextProps: any) {
-		console.log('user-->', nextProps); // roberto
 		if (nextProps.user) {
 			if (nextProps.user.isAuthenticated) {
 				swal('Congrats!', 'You just logged in!', 'success');
