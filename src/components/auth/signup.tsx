@@ -15,7 +15,7 @@ import './signin.css';
 // static assets
 const loginBackImage = require('../../img/login-back-image.svg');
 const appLogo = require('../../img/logo.svg');
-const imagePath: string = 'https://image.tmdb.org/t/p/w1920';
+const imagePath: string = 'https://image.tmdb.org/t/p/w1280';
 
 // external components
 import * as Movie from '../../interfaces/movie';
@@ -27,7 +27,8 @@ import { signup_user } from '../../actions/auth/auth';
 @connect((store) => {
 	return {
 		movies: store.movies.movies.results,
-		message: store.auth.message.message
+		message: store.auth.message,
+		user: store.auth.user
 	};
 })
 
@@ -50,6 +51,7 @@ class SignUpPage extends React.Component <any, any> {
 	}
 
 	componentWillReceiveProps(nextProps: any) {
+		console.log('message-->', nextProps.message); // roberto
 		if (nextProps.message === 'account created') {
 			swal('Congrats!', 'account created', 'success');
 			hashHistory.push('signin');
