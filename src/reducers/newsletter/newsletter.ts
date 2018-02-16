@@ -1,6 +1,5 @@
 
 // newsletter reducers
-
 export default function reducer(
 	state: any= {
 	fetching: false,
@@ -19,7 +18,7 @@ export default function reducer(
 			return { ...state, fetching: false, fetched: false, error: action.payload };
 		}
 		default: {
-			return { ...state, fetching: false, fetched: false, error: 'fall on the default'};
+			return state;
 		}
 	}
 }
