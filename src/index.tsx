@@ -10,7 +10,7 @@ import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
 //  redux store
-import store from './store';
+import { store } from './store';
 
 const app = document.getElementById('root');
 
