@@ -14,11 +14,12 @@ import './user.css';
 // external components
 
 // actions
-import { get_protected_route } from '../../actions/user/user';
+import { signout_user } from '../../actions/auth/auth';
 
 @connect((store) => {
+	console.log('store-->', store); // roberto	
 	return {
-		user: store.auth.message.data
+		user: store.auth.user,
 	};
 })
 
@@ -29,15 +30,12 @@ class UserPage extends React.Component <any, any> {
 		super(props);
 		this.state = {
 		};
+		this.logout = this.logout.bind(this);
 	}
 
-	componentWillMount() {
-		const { user } = this.props;
-		if (!user || !user.isAuthenticated) {
-			hashHistory.push('signin');
-		} else {
-			this.props.dispatch(get_protected_route());
-		}
+	logout() {
+		this.props.dispatch(signout_user());
+		hashHistory.push('/');
 	}
 
 	render() {
@@ -45,6 +43,9 @@ class UserPage extends React.Component <any, any> {
 			<div style={{'height': 'inherit'}}>
 				<TopMenu path={this.props.route.path}/>``
 				<h1>User Page</h1>
+				<div onClick={this.logout} className="landingPage_subscribe_submit">
+					<span>Submit</span>
+				</div>
 			</div>
 		);
 	}
