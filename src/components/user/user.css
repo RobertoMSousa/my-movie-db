@@ -1,0 +1,7 @@
+.userPageLogOutButton {
+    height: 50px;
+    width: 250px;
+    background-color: red;
+    border-radius: 10px;
+    display: inline-flex;
+}

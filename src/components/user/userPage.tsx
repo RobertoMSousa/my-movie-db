@@ -50,8 +50,8 @@ class UserPage extends React.Component <any, any> {
 			<div style={{'height': 'inherit'}}>
 				<TopMenu path={this.props.route.path}/>``
 				<h1>User Page</h1>
-				<div onClick={this.logout} className="landingPage_subscribe_submit">
-					<span>Submit</span>
+				<div onClick={this.logout} className="userPageLogOutButton center">
+					<span>Logout</span>
 				</div>
 			</div>
 		);
