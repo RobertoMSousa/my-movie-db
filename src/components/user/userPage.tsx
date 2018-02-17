@@ -38,6 +38,13 @@ class UserPage extends React.Component <any, any> {
 		hashHistory.push('/');
 	}
 
+	componentWillMount() {
+		console.log('this.props.user-->', this.props.user); // roberto
+		if (!this.props.user || !this.props.user.isAuthenticated) {
+			hashHistory.push('/');
+		}
+	}
+
 	render() {
 		return (
 			<div style={{'height': 'inherit'}}>
