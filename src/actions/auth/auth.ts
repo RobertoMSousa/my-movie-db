@@ -47,7 +47,7 @@ export function signin_user(email: string, password: string) {
 /*
 Sign Out user from platform
 */
-export function signout_user(email: string, password: string) {
+export function signout_user() {
 	return function(dispatch: any) {
 		dispatch({ type: 'SIGNOUT_USER'});
 		fetch(backendUrl + '/auth/logout', {
