@@ -20,7 +20,7 @@ import { getMostPopularMovies } from '../../actions/movies/movies';
 import { subscribe_newletter } from '../../actions/newsletter/newsletter';
 
 // static assets
-const imagePath: string = 'https://image.tmdb.org/t/p/w1920';
+const imagePath: string = 'https://image.tmdb.org/t/p/w1280';
 const posterPath: string = 'https://image.tmdb.org/t/p/w342';
 const appBackGround = require('../../img/MobileApps.png');
 const appStoreLogo = require('../../img/app-store.svg');
@@ -112,7 +112,7 @@ class LandingPage extends React.Component <any, any> {
 						</div>
 					</div>
 				}
-				<div className="landingPage_download_apps_container" style={{backgroundImage : `url(${appBackGround})`} }>
+				<div className="landingPage_download_apps_container" style={{ backgroundImage : `url(${appBackGround})` }}>
 					<div className="landingPage_download_apps_header">
 						<span>Download our apps</span>
 					</div>

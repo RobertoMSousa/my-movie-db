@@ -15,7 +15,7 @@ import './signin.css';
 // static assets
 const loginBackImage = require('../../img/login-back-image.svg');
 const appLogo = require('../../img/logo.svg');
-const imagePath: string = 'https://image.tmdb.org/t/p/w1920';
+const imagePath: string = 'https://image.tmdb.org/t/p/w1280';
 
 // external components
 import * as Movie from '../../interfaces/movie';
@@ -27,7 +27,7 @@ import { signin_user } from '../../actions/auth/auth';
 @connect((store) => {
 	return {
 		movies: store.movies.movies.results,
-		user: store.auth.message.data
+		user: store.auth.user
 	};
 })
 
@@ -55,7 +55,7 @@ class SignInPage extends React.Component <any, any> {
 				// redirect
 				hashHistory.push('/user');
 			} else {
-				swal('Error!', 'email or password not valid', 'error');
+				// swal('Error!', 'email or password not valid', 'error');
 			}
 		}
 	}

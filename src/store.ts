@@ -1,12 +1,22 @@
 import reducer from './reducers/index';
 import { createStore, applyMiddleware } from 'redux';
-
-// import logger from "redux-logger";
 import thunk from 'redux-thunk';
 import promise from 'redux-promise-middleware';
-//
-// const middleware = applyMiddleware(promise(), logger());
-const middleware = applyMiddleware(promise(), thunk);
-// const middleware = applyMiddleware(promise);
+import { persistStore, persistReducer } from 'redux-persist';
+// import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+// import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 
-export default createStore(reducer, middleware);
+const middleware = applyMiddleware(promise(), thunk);
+
+const persistConfig = {
+	key: 'root',
+	storage,
+	whitelist: ['auth']
+};
+
+const persistedReducerLocal = persistReducer(persistConfig, reducer);
+
+export const store = createStore(persistedReducerLocal, middleware);
+
+export const persistor = persistStore(store);
