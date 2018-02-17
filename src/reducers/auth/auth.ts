@@ -36,7 +36,7 @@ const AuthReducer = function reducer(
 				return { ...state, fetching: true };
 			}
 			case 'SIGNOUT_USER_SUCCESS': {
-				return { ...state, fetching: false, fetched: true, user: action.payload.data, message: action.payload.message };
+				return { ...state, fetching: false, fetched: true, user: null, message: action.payload.message };
 			}
 			case 'SIGNOUT_USER_FAILED': {
 				return { ...state, fetching: false, fetched: false, error: action.payload };
