@@ -13,6 +13,7 @@ const loginLogo = require('../../img/login-locker.svg');
 
 @connect((store) => {
 	return {
+		user: store.auth.user
 	};
 })
 
@@ -32,6 +33,9 @@ class TopMenu extends React.Component <any, any> {
 			selectValue: e.target.id
 		});
 	}
+	componentWillMount() {
+		console.log('user-->', this.props.user); // roberto
+	}
 
 	render() {
 		const arr: Array<string> = ['movies', 'shows', 'music', 'others'];
@@ -50,9 +54,13 @@ class TopMenu extends React.Component <any, any> {
 						);
 					})
 				}
-				<Link className="remove_link_style" to="/signin">
-					<img src={loginLogo} className="topMenuLoginIcon noSelect"/>
-				</Link>
+				{
+					this.props.user && this.props.user.isAuthenticated ?
+					<img src={this.props.user.gravatar} className="topMenuLoginIcon noSelect"/> :
+					<Link className="remove_link_style" to="/signin">
+						<img src={loginLogo} className="topMenuLoginIcon noSelect"/>
+					</Link>
+				}
 			</div>
 		);
 	}
