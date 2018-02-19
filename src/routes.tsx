@@ -42,7 +42,7 @@ class Routes extends React.Component <any, any> {
 					<Route path="signin" name="signin" component={SignIn}/>
 					<Route path="signup" name="signup" component={SignUp}/>
 					<Route path="comingsoon" name="comingsoon" component={ComingSoon}/>
-					<Route path="user" name="user" component={UserPage}/>
+					<Route path="user/profile" name="user" component={UserPage}/>
 					<Route path="*" name="notFound" component={NotFound}/>
 				</Route>
 			</Router>

@@ -56,7 +56,9 @@ class TopMenu extends React.Component <any, any> {
 				}
 				{
 					this.props.user && this.props.user.isAuthenticated ?
-					<img src={this.props.user.gravatar} className="topMenuLoginIcon noSelect"/> :
+					<Link className="remove_link_style" to="/user/profile">
+						<img src={this.props.user.gravatar} className="topMenuLoginIcon noSelect"/> 
+					</Link> :
 					<Link className="remove_link_style" to="/signin">
 						<img src={loginLogo} className="topMenuLoginIcon noSelect"/>
 					</Link>
