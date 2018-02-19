@@ -2,7 +2,7 @@
 import 'whatwg-fetch';
 import swal from 'sweetalert';
 
-const backendUrl: string = process.env.BACKEND_SERVER_URL ? <string> process.env.BACKEND_SERVER_URL : 'http://localhost:8080';
+const backendUrl: string = process.env.REACT_APP_BACKEND_SERVER_URL ? <string> process.env.REACT_APP_BACKEND_SERVER_URL : 'http://localhost:8080';
 
 /*
 Subscribe to the newsletter

@@ -1,6 +1,6 @@
 import 'whatwg-fetch';
 
-const backendUrl: string = process.env.BACKEND_SERVER_URL ? <string> process.env.BACKEND_SERVER_URL : 'http://localhost:8080';
+const backendUrl: string = process.env.REACT_APP_BACKEND_SERVER_URL ? <string> process.env.REACT_APP_BACKEND_SERVER_URL : 'http://localhost:8080';
 
 /*
 Sign up a new user
@@ -27,6 +27,7 @@ export function signup_user(email: string, password: string, passwordRepeated: s
 Sign in user into platform
 */
 export function signin_user(email: string, password: string) {
+	console.log('backend link-->', process.env); // roberto
 	return function(dispatch: any) {
 		dispatch({ type: 'SIGNIN_USER'});
 		fetch(backendUrl + '/auth/login', {
