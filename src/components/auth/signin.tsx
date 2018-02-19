@@ -53,7 +53,7 @@ class SignInPage extends React.Component <any, any> {
 			if (nextProps.user.isAuthenticated) {
 				swal('Congrats!', 'You just logged in!', 'success');
 				// redirect
-				hashHistory.push('/user');
+				hashHistory.push('/user/profile');
 			} else {
 				// swal('Error!', 'email or password not valid', 'error');
 			}
