@@ -11,7 +11,9 @@ export function signup_user(email: string, password: string, passwordRepeated: s
 		fetch(backendUrl + '/auth/signup', {
 			method: 'POST',
 			credentials: 'include',
-			headers: {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'},
+			headers: {'Content-Type': 'application/json',
+			'Access-Control-Allow-Origin': '*',
+			'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'},
 			body: JSON.stringify({'email': email, 'password': password, 'passwordRepeated': passwordRepeated})
 		}).then(function(response: any) {
 			return response.json();
@@ -27,13 +29,16 @@ export function signup_user(email: string, password: string, passwordRepeated: s
 Sign in user into platform
 */
 export function signin_user(email: string, password: string) {
-	console.log('backend link-->', process.env); // roberto
+	// console.log('backend link-->', process.env); // roberto
 	return function(dispatch: any) {
 		dispatch({ type: 'SIGNIN_USER'});
 		fetch(backendUrl + '/auth/login', {
 			method: 'POST',
 			credentials: 'include',
-			headers: {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'},
+			headers: {'Content-Type': 'application/json',
+			'Access-Control-Allow-Origin': '*',
+			'Access-Control-Allow-Methods' : 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+			'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'},
 			body: JSON.stringify({'email': email, 'password': password})
 		}).then(function(response: any) {
 			return response.json();
@@ -54,7 +59,9 @@ export function signout_user() {
 		fetch(backendUrl + '/auth/logout', {
 			method: 'GET',
 			credentials: 'include',
-			headers: {'Content-Type': 'application/json'}
+			headers: {'Content-Type': 'application/json',
+			'Access-Control-Allow-Origin': '*',
+			'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'},
 		}).then(function(response: any) {
 			return response.json();
 		}).then(function(response: any) {
