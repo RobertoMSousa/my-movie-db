@@ -9,10 +9,11 @@ import { Link } from 'react-router';
 // css files
 import './top-menu.css';
 // svg and images
-const loginLogo = require('../../img/login.svg');
+const loginLogo = require('../../img/login-locker.svg');
 
 @connect((store) => {
 	return {
+		user: store.auth.user
 	};
 })
 
@@ -32,11 +33,14 @@ class TopMenu extends React.Component <any, any> {
 			selectValue: e.target.id
 		});
 	}
+	componentWillMount() {
+		console.log('user-->', this.props.user); // roberto
+	}
 
 	render() {
 		const arr: Array<string> = ['movies', 'shows', 'music', 'others'];
 		return (
-			<div className="topBarContainer">
+			<div className="topBarContainer noSelect">
 				{/* <BurgerMenu/> */}
 				{
 					arr.map((value: string) => {
@@ -50,7 +54,15 @@ class TopMenu extends React.Component <any, any> {
 						);
 					})
 				}
-				<img src={loginLogo} className="topMenuLoginIcon"/>
+				{
+					this.props.user && this.props.user.isAuthenticated ?
+					<Link className="remove_link_style" to="/user/profile">
+						<img src={this.props.user.gravatar} className="topMenuLoginIcon noSelect"/> 
+					</Link> :
+					<Link className="remove_link_style" to="/signin">
+						<img src={loginLogo} className="topMenuLoginIcon noSelect"/>
+					</Link>
+				}
 			</div>
 		);
 	}

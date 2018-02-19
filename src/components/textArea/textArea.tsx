@@ -29,7 +29,7 @@ class TextArea extends React.Component <any, any> {
 		return (
 			<form className="formStyle">
 				<input
-					style={{'background-color': this.props.backgroundColor}}
+					style={{'backgroundColor': this.props.backgroundColor}}
 					className="hide-on-focus"
 					placeholder={this.props.placeholder}
 					type="text"

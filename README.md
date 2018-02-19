@@ -77,6 +77,7 @@ Please [open an issue](https://github.com/RobertoMSousa/my-movie-db/issues) for 
 
 ## Credits
 + Some of the vector resources used on the UI where found [here](https://www.vectorstock.com/)
++ Icon made found [here](www.flaticon.com )
 
 ## Suggestions
 - [TSLint](https://marketplace.visualstudio.com/items?itemName=eg2.tslint)

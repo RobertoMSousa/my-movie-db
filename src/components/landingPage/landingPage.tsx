@@ -20,7 +20,7 @@ import { getMostPopularMovies } from '../../actions/movies/movies';
 import { subscribe_newletter } from '../../actions/newsletter/newsletter';
 
 // static assets
-const imagePath: string = 'https://image.tmdb.org/t/p/w1920';
+const imagePath: string = 'https://image.tmdb.org/t/p/w1280';
 const posterPath: string = 'https://image.tmdb.org/t/p/w342';
 const appBackGround = require('../../img/MobileApps.png');
 const appStoreLogo = require('../../img/app-store.svg');
@@ -85,9 +85,9 @@ class LandingPage extends React.Component <any, any> {
 						<div className="landigPage_top_title_wrapper">
 							<span className="landigPage_top_title">Lorem ipsum dolor sit amet</span>
 						</div>
-						<div className="landigPage_register-button">
+						<Link className="landigPage_register-button remove_link_style" to="/signup">
 							<span className="landigPage_register-button_text">Join us!</span>
-						</div>
+						</Link>
 					</div>
 				}
 				{
@@ -100,9 +100,9 @@ class LandingPage extends React.Component <any, any> {
 							<div className="landigPage_call_to_action_left_text">
 								<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tristique magna sit amet purus gravida quis. Purus sit amet luctus venenatis lectus. In ante metus dictum at tempor commodo ullamcorper a lacus. Nulla pellentesque dignissim enim sit amet venenatis urna. Adipiscing bibendum est ultricies integer quis auctor elit sed vulputate.</span>
 							</div>
-							<div className="landigPage_register-button">
+							<Link className="landigPage_register-button remove_link_style" to="/signup">
 								<span className="landigPage_register-button_text">Join us!</span>
-							</div>
+							</Link>
 						</div>
 						<div className="landigPage_call_to_action_right">
 							<div className="landigPage_call_to_action_right_movie_poster" style={{backgroundImage : `url(${posterPath + movies[this.state.movieNumber].poster_path})`}}/>
@@ -112,7 +112,7 @@ class LandingPage extends React.Component <any, any> {
 						</div>
 					</div>
 				}
-				<div className="landingPage_download_apps_container" style={{backgroundImage : `url(${appBackGround})`} }>
+				<div className="landingPage_download_apps_container" style={{ backgroundImage : `url(${appBackGround})` }}>
 					<div className="landingPage_download_apps_header">
 						<span>Download our apps</span>
 					</div>

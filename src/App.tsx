@@ -1,7 +1,6 @@
 
 import * as React from 'react';
-import {Link} from 'react-router';
-
+import { Link } from 'react-router';
 
 // images
 const logo = require('./img/logo.svg');
@@ -16,10 +15,10 @@ class App extends React.Component <any, any> {
 	}
 
 	render() {
-		return (
+		return (		
 			<div className="App">
 				<div className="App-header">
-					<Link to='/'>
+					<Link to="/">
 						<img src={logo} className="App-logo" alt="logo" />
 					</Link>
 				</div>
