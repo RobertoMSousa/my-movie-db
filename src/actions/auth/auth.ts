@@ -43,7 +43,9 @@ export function signin_user(email: string, password: string) {
 	return function(dispatch: any) {
 		dispatch({ type: 'SIGNIN_USER'});
 		got.post(backendUrl + '/auth/login', {
-			headers: {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'},
+			headers: {'Content-Type': 'application/json',
+			'Access-Control-Allow-Origin': '*',
+			'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'},
 			body: JSON.stringify({'email': email, 'password': password})
 		}).then(response => {
 			console.log('response-->', response); // roberto
