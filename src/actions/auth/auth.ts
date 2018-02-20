@@ -11,9 +11,7 @@ export function signup_user(email: string, password: string, passwordRepeated: s
 		fetch(backendUrl + '/auth/signup', {
 			method: 'POST',
 			credentials: 'include',
-			headers: {'Content-Type': 'application/json',
-			'Access-Control-Allow-Origin': '*',
-			'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'},
+			headers: {'Content-Type': 'application/json'},
 			body: JSON.stringify({'email': email, 'password': password, 'passwordRepeated': passwordRepeated})
 		}).then(function(response: any) {
 			return response.json();
@@ -35,10 +33,7 @@ export function signin_user(email: string, password: string) {
 		fetch(backendUrl + '/auth/login', {
 			method: 'POST',
 			credentials: 'include',
-			headers: {'Content-Type': 'application/json',
-			'Access-Control-Allow-Origin': '*',
-			'Access-Control-Allow-Methods' : 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-			'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'},
+			headers: {'Content-Type': 'application/json'},
 			body: JSON.stringify({'email': email, 'password': password})
 		}).then(function(response: any) {
 			return response.json();
@@ -59,9 +54,7 @@ export function signout_user() {
 		fetch(backendUrl + '/auth/logout', {
 			method: 'GET',
 			credentials: 'include',
-			headers: {'Content-Type': 'application/json',
-			'Access-Control-Allow-Origin': '*',
-			'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'},
+			headers: {'Content-Type': 'application/json'},
 		}).then(function(response: any) {
 			return response.json();
 		}).then(function(response: any) {
