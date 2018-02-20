@@ -34,7 +34,7 @@ export function signin_user(email: string, password: string) {
 			mode: 'no-cors',
 			method: 'POST',
 			credentials: 'include',
-			headers: {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'},
+			headers: {'Content-Type': 'application/json'},
 			body: JSON.stringify({'email': email, 'password': password})
 		}).then(function(response: any) {
 			return response.json();
