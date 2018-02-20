@@ -33,7 +33,7 @@ export function signin_user(email: string, password: string) {
 		fetch(backendUrl + '/auth/login', {
 			method: 'POST',
 			credentials: 'include',
-			headers: {'Content-Type': 'application/json'},
+			headers: {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'},
 			body: JSON.stringify({'email': email, 'password': password})
 		}).then(function(response: any) {
 			return response.json();
