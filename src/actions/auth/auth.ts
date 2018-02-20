@@ -31,6 +31,7 @@ export function signin_user(email: string, password: string) {
 	return function(dispatch: any) {
 		dispatch({ type: 'SIGNIN_USER'});
 		fetch(backendUrl + '/auth/login', {
+			mode: 'no-cors',
 			method: 'POST',
 			credentials: 'include',
 			headers: {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'},
