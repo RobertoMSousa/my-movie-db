@@ -15,7 +15,6 @@ export function get_protected_route() {
 		}).then(function(response: any) {
 			return response.json();
 		}).then(function(response: any) {
-			console.log('user action-->', response); // roberto
 			dispatch({ type: 'USER_ACCOUNT_SUCCESS', payload: response.data });
 		}).catch(function(err: any) {
 			dispatch({ type: 'USER_ACCOUNT_FAILED', err: err});

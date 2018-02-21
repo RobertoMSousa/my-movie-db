@@ -24,7 +24,6 @@ export function getTopRatedMovies() {
 	get the most popular movies
 */
 export function getMostPopularMovies() {
-	console.log('process env populat movies-->', process.env); // roberto
 	return function(dispatch: any) {
 		dispatch({ type: 'GET_MOST_POPULAR_MOVIES' });
 		fetch('https://api.themoviedb.org/3/movie/popular?api_key=' + process.env.REACT_APP_API_KEY + '&language=en-US&page=1', {

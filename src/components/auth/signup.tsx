@@ -51,7 +51,6 @@ class SignUpPage extends React.Component <any, any> {
 	}
 
 	componentWillReceiveProps(nextProps: any) {
-		console.log('message-->', nextProps.message); // roberto
 		if (nextProps.message === 'account created') {
 			swal('Congrats!', 'account created', 'success');
 			hashHistory.push('signin');
