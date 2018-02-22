@@ -29,8 +29,7 @@
     "redux-thunk": "^2.2.0",
     "sweetalert": "^2.1.0",
     "tslint": "^5.8.0",
-    "validator": "^9.2.0",
-    "whatwg-fetch": "^2.0.3"
+    "validator": "^9.2.0"
   },
   "scripts": {
     "start": "react-scripts-ts start",
