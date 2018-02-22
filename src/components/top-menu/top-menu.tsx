@@ -33,9 +33,6 @@ class TopMenu extends React.Component <any, any> {
 			selectValue: e.target.id
 		});
 	}
-	componentWillMount() {
-		console.log('user-->', this.props.user); // roberto
-	}
 
 	render() {
 		const arr: Array<string> = ['movies', 'shows', 'music', 'others'];

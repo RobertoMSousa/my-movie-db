@@ -12,7 +12,6 @@ const AuthReducer = function reducer(
 		error: null,
 	}, 
 	action: any) {
-		console.log('action auth-->', action); // roberto
 		switch (action.type) {
 			case 'SIGNIN_USER': {
 				return { ...state, fetching: true };
@@ -42,7 +41,6 @@ const AuthReducer = function reducer(
 				return { ...state, fetching: false, fetched: false, error: action.payload };
 			}
 			default: {
-				console.log('state default-->', ...state); // roberto
 				return {...state};
 			}
 		}
