@@ -1,6 +1,6 @@
-import 'whatwg-fetch';
+import * as got from 'got';
 
-const backendUrl: string = process.env.BACKEND_SERVER_URL ? <string> process.env.BACKEND_SERVER_URL : 'http://localhost:8080';
+const backendUrl: string = process.env.REACT_APP_BACKEND_SERVER_URL ? <string> process.env.REACT_APP_BACKEND_SERVER_URL : 'http://localhost:8080';
 
 /*
 Sign up a new user
@@ -8,16 +8,12 @@ Sign up a new user
 export function signup_user(email: string, password: string, passwordRepeated: string) {
 	return function(dispatch: any) {
 		dispatch({ type: 'SIGNUP_USER'});
-		fetch(backendUrl + '/auth/signup', {
-			method: 'POST',
-			credentials: 'include',
-			headers: {'Content-Type': 'application/json'},
+		got.post(backendUrl + '/auth/signup', {
+			headers: {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'},
 			body: JSON.stringify({'email': email, 'password': password, 'passwordRepeated': passwordRepeated})
-		}).then(function(response: any) {
-			return response.json();
-		}).then(function(response: any) {
-			dispatch({ type: 'SIGNUP_USER_SUCCESS', payload: response });
-		}).catch(function(err: any) {
+		}).then(response => {
+			dispatch({ type: 'SIGNUP_USER_SUCCESS',  payload: JSON.parse(response.body) });
+		}).catch(err => {
 			dispatch({ type: 'SIGNUP_USER_FAILED', payload: err});
 		});
 	};
@@ -29,16 +25,16 @@ Sign in user into platform
 export function signin_user(email: string, password: string) {
 	return function(dispatch: any) {
 		dispatch({ type: 'SIGNIN_USER'});
-		fetch(backendUrl + '/auth/login', {
-			method: 'POST',
-			credentials: 'include',
-			headers: {'Content-Type': 'application/json'},
+		got.post(backendUrl + '/auth/login', {
+			headers: {'Content-Type': 'application/json',
+				'Access-Control-Allow-Origin': '*',
+				'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
+				'Access-Control-Allow-Credentials': 'true'
+			},
 			body: JSON.stringify({'email': email, 'password': password})
-		}).then(function(response: any) {
-			return response.json();
-		}).then(function(response: any) {
-			dispatch({ type: 'SIGNIN_USER_SUCCESS',  payload: response });
-		}).catch(function(err: any) {
+		}).then(response => {
+			dispatch({ type: 'SIGNIN_USER_SUCCESS',  payload: JSON.parse(response.body) });
+		}).catch(err => {
 			dispatch({ type: 'SIGNIN_USER_FAILED', payload: err});
 		});
 	};
@@ -50,15 +46,11 @@ Sign Out user from platform
 export function signout_user() {
 	return function(dispatch: any) {
 		dispatch({ type: 'SIGNOUT_USER'});
-		fetch(backendUrl + '/auth/logout', {
-			method: 'GET',
-			credentials: 'include',
-			headers: {'Content-Type': 'application/json'}
-		}).then(function(response: any) {
-			return response.json();
-		}).then(function(response: any) {
-			dispatch({ type: 'SIGNOUT_USER_SUCCESS',  payload: response });
-		}).catch(function(err: any) {
+		got.get(backendUrl + '/auth/logout', {
+			headers: {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'}
+		}).then(response => {
+			dispatch({ type: 'SIGNOUT_USER_SUCCESS',  payload: JSON.parse(response.body) });
+		}).catch(err => {
 			dispatch({ type: 'SIGNOUT_USER_FAILED', payload: err});
 		});
 	};

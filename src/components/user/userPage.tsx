@@ -17,7 +17,6 @@ import './user.css';
 import { signout_user } from '../../actions/auth/auth';
 
 @connect((store) => {
-	console.log('store-->', store); // roberto	
 	return {
 		user: store.auth.user,
 	};
@@ -39,7 +38,6 @@ class UserPage extends React.Component <any, any> {
 	}
 
 	componentWillMount() {
-		console.log('this.props.user-->', this.props.user); // roberto
 		if (!this.props.user || !this.props.user.isAuthenticated) {
 			hashHistory.push('/');
 		}

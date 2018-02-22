@@ -1,6 +1,6 @@
-import 'whatwg-fetch';
 
-const backendUrl: string = process.env.BACKEND_SERVER_URL ? <string> process.env.BACKEND_SERVER_URL : 'http://localhost:8080';
+import * as got from 'got';
+const backendUrl: string = process.env.REACT_APP_BACKEND_SERVER_URL ? <string> process.env.REACT_APP_BACKEND_SERVER_URL : 'http://localhost:8080';
 
 /*
 GET the user protected route
@@ -8,17 +8,12 @@ GET the user protected route
 export function get_protected_route() {
 	return function(dispatch: any) {
 		dispatch({ type: 'USER_ACCOUNT'});
-		fetch(backendUrl + '/user/account', {
-			credentials: 'include',
-			method: 'GET',
-			headers: {'Content-Type': 'application/json'}
-		}).then(function(response: any) {
-			return response.json();
-		}).then(function(response: any) {
-			console.log('user action-->', response); // roberto
-			dispatch({ type: 'USER_ACCOUNT_SUCCESS', payload: response.data });
-		}).catch(function(err: any) {
-			dispatch({ type: 'USER_ACCOUNT_FAILED', err: err});
+		got.get(backendUrl + '/user/account', {
+			headers: {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'}
+		}).then(response => {
+			dispatch({ type: 'USER_ACCOUNT_SUCCESS',  payload: JSON.parse(response.body) });
+		}).catch(err => {
+			dispatch({ type: 'USER_ACCOUNT_FAILED', payload: err});
 		});
 	};
 }

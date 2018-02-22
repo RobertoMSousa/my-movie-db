@@ -17,6 +17,15 @@ export default function reducer(
 		case 'SUBSCRIBE_TO_NEWSLETTER_FAILED': {
 			return { ...state, fetching: false, fetched: false, error: action.payload };
 		}
+		case 'UNSUBSCRIBE_TO_NEWSLETTER': {
+			return { ...state, fetching: true };
+		}
+		case 'UNSUBSCRIBE_TO_NEWSLETTER_SUCCESS': {
+			return { ...state, fetching: false, fetched: true, message: action.payload };
+		}
+		case 'UNSUBSCRIBE_TO_NEWSLETTER_FAILED': {
+			return { ...state, fetching: false, fetched: false, error: action.payload };
+		}
 		default: {
 			return state;
 		}
