@@ -1,5 +1,3 @@
-import 'whatwg-fetch';
-
 import * as got from 'got';
 
 const backendUrl: string = process.env.REACT_APP_BACKEND_SERVER_URL ? <string> process.env.REACT_APP_BACKEND_SERVER_URL : 'http://localhost:8080';
@@ -17,7 +15,6 @@ export function signup_user(email: string, password: string, passwordRepeated: s
 			dispatch({ type: 'SIGNUP_USER_SUCCESS',  payload: JSON.parse(response.body) });
 		}).catch(err => {
 			dispatch({ type: 'SIGNUP_USER_FAILED', payload: err});
-			console.log(err);
 		});
 	};
 }
@@ -39,7 +36,6 @@ export function signin_user(email: string, password: string) {
 			dispatch({ type: 'SIGNIN_USER_SUCCESS',  payload: JSON.parse(response.body) });
 		}).catch(err => {
 			dispatch({ type: 'SIGNIN_USER_FAILED', payload: err});
-			console.log(err);
 		});
 	};
 }
